@@ -8,8 +8,8 @@ results = soup.findAll("li", {"class" : "article"},{"itemprop":"itemListElement"
 #print (results)
 for tag in results:
  	#soup=bsp(tag)
- 	headline = tag.find("span", {"class" : "title"})
-	print (headline.string)
+	headline = tag.find("span", {"class" : "title"})
+	print(headline.string)
 	date_time= tag.find("span",{"class" : "meta"})
 	print(date_time.string)
 	#date_time_formatted= date_time.string
