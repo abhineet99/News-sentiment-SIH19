@@ -74,7 +74,7 @@ class NewsPageState extends State<NewsPage> {
                       child: Container(
                         padding: EdgeInsets.fromLTRB(10, 0, 20, 0),
                         child:Text(
-                        "Railway minister ne patriyon pe mara muth, saaf krne aaye modi.",
+                        "Railway minister Railway ministerRailway minister, Railway ministere modi.",
                         style: TextStyle(
                           fontSize: 17,
                         ),

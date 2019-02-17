@@ -145,7 +145,7 @@ class MyHomePageState extends State<MyHomePage>
                                 child: Hero(
                                   tag: "headline"+i.toString(),
                                   child:Text(
-                                    "Railway minister ne patriyon pe mara muth, saaf krne aaye modi."),
+                                    "Railway minister Railway ministerRailway minister, Railway ministere modi."),
                               ))),
                         ),
                         Expanded(
