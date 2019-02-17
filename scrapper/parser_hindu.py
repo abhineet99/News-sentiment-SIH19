@@ -1,4 +1,4 @@
-#this is a scrapper of Times of India news website
+#this is a scrapper of The Hindu
 import requests
 from bs4 import BeautifulSoup as bsp #pip install beautifulsoup4
 page = requests.get('https://www.thehindu.com/search/?q=railways&order=DESC&sort=publishdate&pd=yesterday&ct=text&page=1') #the toi railways topic link
