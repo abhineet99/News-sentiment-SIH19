@@ -11,7 +11,7 @@ for tag in results:
 #  	#soup=bsp(tag)
  	headline = tag.find("a", {"class" : "story-card75x1-text"})
  	print(headline.string)
-# 	date_time= tag.find("span",{"class" : "meta"})
-# 	print(date_time.string)
+ 	date_time= tag.find("span",{"class" : "dateline"})
+ 	print(date_time.string)
 # 	#date_time_formatted= date_time.string
 # 	print('\n')
