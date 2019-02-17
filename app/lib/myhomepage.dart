@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'config.dart';
 import 'newspage.dart';
+import 'news.dart';
+
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -9,50 +11,50 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-      static BuildContext _context;
-      static Widget bar=Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                    // width: 50,
-                                    //  height: 150,
-                                    padding: EdgeInsets.fromLTRB(9, 4, 9, 4),
-                                    child: Center(child: good)),
-                              ),
-                              Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                      padding: EdgeInsets.all(9),
-                                      child: Center(
-                                          child: Text(
-                                        "Score",
-                                        style: TextStyle(color: Colors.grey),
-                                      )))),
-                              Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                      alignment: Alignment(0, 0),
-                                      child: IconButton(
-                                        iconSize: 18,
-                                        icon: Icon(
-                                          Icons.data_usage,
-                                          color: Colors.grey,
-                                        ),
-                                        onPressed: () {
-                                          Navigator.of(_context).push(
-                                              MaterialPageRoute(
-                                                  builder: (context) {
-                                            return Scaffold(
-                                              appBar: AppBar(),
-                                              body: Container(),
-                                            );
-                                          }));
-                                        },
-                                      )))
-                            ],
-                          );
+  static News news=News();
+  static BuildContext _context;
+  static Widget bar = Row(
+    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: <Widget>[
+      Expanded(
+        flex: 1,
+        child: Container(
+            // width: 50,
+            //  height: 150,
+            padding: EdgeInsets.fromLTRB(9, 4, 9, 4),
+            child: Center(child: good)),
+      ),
+      Expanded(
+          flex: 1,
+          child: Container(
+              padding: EdgeInsets.all(9),
+              child: Center(
+                  child: Text(
+                "Score",
+                style: TextStyle(color: Colors.grey),
+              )))),
+      Expanded(
+          flex: 1,
+          child: Container(
+              alignment: Alignment(0, 0),
+              child: IconButton(
+                iconSize: 18,
+                icon: Icon(
+                  Icons.data_usage,
+                  color: Colors.grey,
+                ),
+                onPressed: () {
+                  Navigator.of(_context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return Scaffold(
+                      appBar: AppBar(),
+                      body: Container(),
+                    );
+                  }));
+                },
+              )))
+    ],
+  );
   TabController _controller;
   int _index;
   MyHomePageState() {
@@ -97,25 +99,25 @@ class MyHomePageState extends State<MyHomePage>
                 ),
               ],
               borderRadius: BorderRadius.circular(10),
-              color: Colors.red,
+             // color: Colors.red,
             ),
             child: Row(
               children: <Widget>[
                 new Expanded(
-                    flex: 2,
-                    
-                    child: Hero(
-                      tag: "NewsImage"+i.toString(),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: NetworkImage(Config.textImg)),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                bottomLeft: Radius.circular(10))),
-                      ),
-                    ),),
+                  flex: 2,
+                  child: Hero(
+                    tag: "NewsImage" + i.toString(),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: NetworkImage(Config.textImg)),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              bottomLeft: Radius.circular(10))),
+                    ),
+                  ),
+                ),
                 new Expanded(
                   flex: 4,
                   child: Container(
@@ -135,18 +137,19 @@ class MyHomePageState extends State<MyHomePage>
                           child: Container(
                               padding: EdgeInsets.fromLTRB(9, 4, 4, 4),
                               child: GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) {
-                                    return NewsPage(bar: bar,);
-                                    
-                                  }));
-                                },
-                                child: Hero(
-                                  tag: "headline"+i.toString(),
-                                  child:Text(
-                                    "Railway minister Railway ministerRailway minister, Railway ministere modi."),
-                              ))),
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (context) {
+                                      return NewsPage(
+                                        news: news,
+                                      );
+                                    }));
+                                  },
+                              //    child: Hero(
+                              //      tag: "headline" + i.toString(),
+                                    child: Text(
+                                        "Kritagya k tatte chatta pakda gaya jai, library me kr rahe the kand"),//Kritagya k tatte chatta pakda gaya jai, library me lr rahe the kand
+                                  )),//),
                         ),
                         Expanded(
                           flex: 1,
@@ -222,13 +225,13 @@ class MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
-    _context=context;
+    _context = context;
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: PreferredSize(
-        preferredSize: Size(_width, _height / 5),
+        preferredSize: Size(_width, _height / 6),
         child: Column(
           children: <Widget>[
             Padding(

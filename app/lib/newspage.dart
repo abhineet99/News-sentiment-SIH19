@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'config.dart';
+import 'news.dart';
 
 class NewsPage extends StatefulWidget {
-  Widget bar;
-  NewsPage({this.bar});
+  News news;
+  NewsPage({this.news});
   @override
-  State<StatefulWidget> createState() => NewsPageState(bar: bar);
+  State<StatefulWidget> createState() => NewsPageState(news: news);
 }
 
 class NewsPageState extends State<NewsPage> {
-  Widget bar;
-  NewsPageState({this.bar});
+  static BuildContext _context;
+  News news;
+  NewsPageState({this.news});
   static final good = Container(
     height: 25,
     width: 50,
@@ -21,6 +23,48 @@ class NewsPageState extends State<NewsPage> {
       "Good",
       style: TextStyle(color: Colors.white),
     )),
+  );
+  static Widget bar = Row(
+    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: <Widget>[
+      Expanded(
+        flex: 1,
+        child: Container(
+            // width: 50,
+            //  height: 150,
+            padding: EdgeInsets.fromLTRB(9, 4, 9, 4),
+            child: Center(child: good)),
+      ),
+      Expanded(
+          flex: 1,
+          child: Container(
+              padding: EdgeInsets.all(9),
+              child: Center(
+                  child: Text(
+                "Score",
+                style: TextStyle(color: Colors.grey),
+              )))),
+      Expanded(
+          flex: 1,
+          child: Container(
+              alignment: Alignment(0, 0),
+              child: IconButton(
+                iconSize: 18,
+                icon: Icon(
+                  Icons.data_usage,
+                  color: Colors.grey,
+                ),
+                onPressed: () {
+                  Navigator.of(_context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return Scaffold(
+                      appBar: AppBar(),
+                      body: Container(),
+                    );
+                  }));
+                },
+              )))
+    ],
   );
   static final bad = Container(
     height: 25,
@@ -35,6 +79,7 @@ class NewsPageState extends State<NewsPage> {
   );
   @override
   Widget build(BuildContext context) {
+    _context=context;
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -62,24 +107,18 @@ class NewsPageState extends State<NewsPage> {
            // Padding(padding: EdgeInsets.all(2)),
             Container(
                 padding: EdgeInsets.fromLTRB(9, 4, 4, 4),
-                child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (context) {
-                        return NewsPage();
-                      }));
-                    },
-                    child: Hero(
-                      tag: "headline" + 0.toString(),
+                
+                  //  child: Hero(
+                  //    tag: "headline" + 0.toString(),
                       child: Container(
                         padding: EdgeInsets.fromLTRB(10, 0, 20, 0),
                         child:Text(
-                        "Railway minister Railway ministerRailway minister, Railway ministere modi.",
+                        "Kritagya k tatte chatta pakda gaya jai, library me kr rahe the kand",
                         style: TextStyle(
                           fontSize: 17,
                         ),
                       )),
-                    ))),
+                    ),//),
                     Container(
                       padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                             child: Row(
