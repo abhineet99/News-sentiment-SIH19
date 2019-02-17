@@ -1,7 +1,7 @@
-#this is a scrapper of The Hindu
+#this is a scrapper of The Hindu website, extracts a day's news
 import requests
 from bs4 import BeautifulSoup as bsp #pip install beautifulsoup4
-page = requests.get('https://www.thehindu.com/search/?q=railways&order=DESC&sort=publishdate&pd=yesterday&ct=text&page=1') #the toi railways topic link
+page = requests.get('https://www.thehindu.com/search/?q=railways&order=DESC&sort=publishdate&pd=yesterday&ct=text&page=1') 
 data = page.text
 soup= bsp(data,'html.parser')
 #print(soup)

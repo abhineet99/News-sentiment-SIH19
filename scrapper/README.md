@@ -2,4 +2,4 @@
 
 -> BeautifulSoup is required #pip install beautifulsoup4
 
--> Use tabs for indentation if you edit anything
+-> Use tabs for indentation if you edit anything(tab size=4)
