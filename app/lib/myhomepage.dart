@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'config.dart';
+import 'newspage.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -7,6 +9,50 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
+      static BuildContext _context;
+      static Widget bar=Row(
+                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                    // width: 50,
+                                    //  height: 150,
+                                    padding: EdgeInsets.fromLTRB(9, 4, 9, 4),
+                                    child: Center(child: good)),
+                              ),
+                              Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                      padding: EdgeInsets.all(9),
+                                      child: Center(
+                                          child: Text(
+                                        "Score",
+                                        style: TextStyle(color: Colors.grey),
+                                      )))),
+                              Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                      alignment: Alignment(0, 0),
+                                      child: IconButton(
+                                        iconSize: 18,
+                                        icon: Icon(
+                                          Icons.data_usage,
+                                          color: Colors.grey,
+                                        ),
+                                        onPressed: () {
+                                          Navigator.of(_context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) {
+                                            return Scaffold(
+                                              appBar: AppBar(),
+                                              body: Container(),
+                                            );
+                                          }));
+                                        },
+                                      )))
+                            ],
+                          );
   TabController _controller;
   int _index;
   MyHomePageState() {
@@ -24,11 +70,21 @@ class MyHomePageState extends State<MyHomePage>
       style: TextStyle(color: Colors.white),
     )),
   );
+  static final bad = Container(
+    height: 25,
+    width: 50,
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(3), color: Colors.greenAccent),
+    child: Center(
+        child: Text(
+      "Bad",
+      style: TextStyle(color: Colors.red),
+    )),
+  );
   static final _list = ListView.builder(
     itemCount: 5,
     itemBuilder: (context, i) {
       return Container(
-          
           padding: EdgeInsets.all(15),
           child: Container(
             height: 120,
@@ -46,15 +102,20 @@ class MyHomePageState extends State<MyHomePage>
             child: Row(
               children: <Widget>[
                 new Expanded(
-                  flex: 2,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            bottomLeft: Radius.circular(10))),
-                  ),
-                ),
+                    flex: 2,
+                    
+                    child: Hero(
+                      tag: "NewsImage"+i.toString(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: NetworkImage(Config.textImg)),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                bottomLeft: Radius.circular(10))),
+                      ),
+                    ),),
                 new Expanded(
                   flex: 4,
                   child: Container(
@@ -67,35 +128,59 @@ class MyHomePageState extends State<MyHomePage>
                       children: <Widget>[
                         Expanded(
                           flex: 1,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              good,
-                              Text(
-                                "Score",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                             IconButton(
-                               icon: Icon(Icons.data_usage,color: Colors.grey,),
-                               onPressed: (){
-                                 Navigator.of(context).push( MaterialPageRoute(
-                                    builder: (context){return Scaffold(
-                                      appBar: AppBar(),
-                                      body: Container(),
-                                    );}
-                                 ));
-                               },
-                             )
-                            ],
+                          child: bar,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                              padding: EdgeInsets.fromLTRB(9, 4, 4, 4),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (context) {
+                                    return NewsPage(bar: bar,);
+                                    
+                                  }));
+                                },
+                                child: Hero(
+                                  tag: "headline"+i.toString(),
+                                  child:Text(
+                                    "Railway minister ne patriyon pe mara muth, saaf krne aaye modi."),
+                              ))),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    alignment: Alignment(-1, 0),
+                                    child: Container(
+                                        padding:
+                                            EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                        child: Text(
+                                          "Times of India",
+                                          style: TextStyle(color: Colors.grey),
+                                        )),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    alignment: Alignment(1, 0),
+                                    child: Container(
+                                        padding:
+                                            EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                        child: Text("Date-Time",
+                                            style:
+                                                TextStyle(color: Colors.grey))),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Container(),
                         )
                       ],
                     ),
@@ -137,6 +222,7 @@ class MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
+    _context=context;
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.height;
     return Scaffold(
