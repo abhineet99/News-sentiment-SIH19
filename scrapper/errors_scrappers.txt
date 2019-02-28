@@ -1,0 +1,7 @@
+Pending:
+1. In Hindu Parser(probably common to all):
+Traceback (most recent call last):
+  File "parser_hindu.py", line 20, in <module>
+    writer.writerow([source,headline.string,to_print])
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u2013' in position 12: ordinal not in range(128)
+
