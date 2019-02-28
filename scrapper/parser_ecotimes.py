@@ -1,6 +1,7 @@
 #this is a scrapper of economic times website
 import requests
 import csv
+from datetime import datetime
 source="Economic Times"
 from bs4 import BeautifulSoup as bsp #pip install beautifulsoup4
 page = requests.get('https://economictimes.indiatimes.com/topic/indian-railways') #ndtv railways topic link
@@ -27,7 +28,13 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		details=details.string
 		#print(details)
 		try:
-			to_print=to_print[0:12]	
+			to_print=to_print[0:12]
+			#print(to_print)
+			datetime_object = datetime.strptime(to_print, '%d %b, %Y')
+			to_print=datetime_object.strftime('%B %d, %Y')
+		except ValueError:
+			datetime_object = datetime.strptime(to_print, '%d %b, %Y,')
+			to_print=datetime_object.strftime('%B %d, %Y')
 		except TypeError:
 			to_print=" "
 

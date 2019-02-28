@@ -1,6 +1,9 @@
 #this is a scrapper of The Hindu website, extracts a day's news
 import requests
 import csv
+from datetime import datetime
+
+
 news_words=["coach","IRCTC","irctc","railway","railways","express","passenger","passengers","coaches","rail","train","trains","rails","track","tracks","engine"]
 source="The Hindu"
 from bs4 import BeautifulSoup as bsp #pip install beautifulsoup4
@@ -36,6 +39,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			to_print=date_time.string
 			to_print=to_print.encode('utf-8')
 			headline=headline.encode('utf-8')
+			#datetime_object = to_print.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 			details=details.encode('utf-8')
 			writer=csv.writer(csvfile)
 			writer.writerow([source,headline,headline_url,to_print,details])
