@@ -14,8 +14,17 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		headline = tag.find("span", {"class" : "title"})
 		#print(headline.string)
 		date_time= tag.find("span",{"class" : "meta"})
+		headline_url="https://timesofindia.indiatimes.com"
+		headline_url2=tag.find("span", {"class" : "fb"})
+		headline_url2=headline_url2['data-url']
+		
+		headline_url=headline_url+headline_url2
+		#print(headline_url)
 		to_print=date_time.string
 		writer=csv.writer(csvfile)
-		writer.writerow([source,headline.string,to_print])
+		try:
+			writer.writerow([source,headline.string,headline_url,to_print," "])
+		except UnicodeEncodeError:
+			continue	
 		#date_time_formatted= date_time.string
-		print('\n')
+		#print('\n')

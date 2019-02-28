@@ -16,12 +16,21 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		headline = tag.find("strong")
 		#print(headline.string)
 		date_time= tag.find("p",{"class" : "list_dateline"})
+		headline_url=tag.find("a")
+		headline_url=headline_url['href']
+		details=tag.find("p",{"class" : "intro"})
+		
+		#print(headline_url)
+		details=details.string
+		#print(details)
 		my_string=date_time.contents[1]
 		to_print=my_string[-38:]
 		to_print=to_print[0:20]
 		writer=csv.writer(csvfile)
-		writer.writerow([source,headline.string,to_print])
-
+		try:
+			writer.writerow([source,headline.string,headline_url,to_print,details])
+		except UnicodeEncodeError:
+			continue
 		#print(to_print)
 		# 	#date_time_formatted= date_time.string
 		#print('\n')
