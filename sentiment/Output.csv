@@ -1,0 +1,606 @@
+Source,Headline,Date,Sentiment
+Economic Times,Assam to promote brand entity “Awesome Assam” on train,"27 Feb, 2019",[[0.6224896  0.37751043]]
+Economic Times,Samjhauta Express to run as per schedule between Delhi and Attari: Railways,"27 Feb, 2019",[[0.7253624 0.2746376]]
+Economic Times,"Now monitor railway punctuality, earnings with 'eDrishti'","25 Feb, 2019",[[0.6700667  0.32993335]]
+Economic Times,Railways to provide 45 acres of surplus land for development of Dharavi,"25 Feb, 2019",[[0.561091   0.43890902]]
+Economic Times,JSPL emerges L1 bidder for railway order, stock up 2%,[[0.6493197  0.35068032]]
+Economic Times,Palace on Wheels: A royal ride on Indian Railways’ luxurious train,"10 Feb, 2019",[[0.85287637 0.1471236 ]]
+Economic Times,JSL Lifestyle launches first dedicated facility for Railways,"18 Feb, 2019",[[0.71641815 0.28358188]]
+Economic Times,Budget 2019: Operating ratio of Indian Railways likely to improve,"2 Feb, 2019,",[[0.5114055  0.48859447]]
+The Hindu,"
+India stops operations of Samjhauta Express "," February 28, 2019",[[0.6374335  0.36256647]]
+The Hindu,"
+Top news of the day: IAF presents proof of Pakistan's use of F-16s, Imran Khan says captured pilot will be released tomorrow, and more "," February 28, 2019",[[0.6458818  0.35411817]]
+The Hindu,"
+IRCTC launches payment aggregator, IRCTC iPay "," February 28, 2019",[[0.6862446 0.3137554]]
+The Hindu,"
+On the move "," February 28, 2019",[[0.6295201  0.37047988]]
+The Hindu,"
+Live updates | IAF displays parts of Amraam missiles as proof that an F-16 attacked Indian military establishment "," February 28, 2019",[[0.595361 0.404639]]
+The Hindu,"
+Pakistan suspends Samjhauta Express train service "," February 28, 2019",[[0.7522089  0.24779116]]
+The Hindu,"
+Rameswaram – Okha express train to stop at Rasipuram "," February 28, 2019",[[0.5979725  0.40202755]]
+The Hindu,"
+Credit goes to Narendra Modi, says BJP "," February 28, 2019",[[0.5939761  0.40602395]]
+The Hindu,"
+‘Cycle-olam’ to woo youth for State’s progress "," February 28, 2019",[[0.59942526 0.40057474]]
+The Hindu,"
+Cigarette smuggling thriving in State airports "," February 28, 2019",[[0.61460185 0.38539815]]
+The Hindu,"
+Waltair division to slip into annals of history "," February 28, 2019",[[0.6785818  0.32141826]]
+The Hindu,"
+Joining Telugu Desam on March 2: Kotla "," February 28, 2019",[[0.7844915  0.21550854]]
+Economic Times,Assam to promote brand entity “Awesome Assam” on train,"27 Feb, 2019",[[0.6224896  0.37751043]]
+Economic Times,Samjhauta Express to run as per schedule between Delhi and Attari: Railways,"27 Feb, 2019",[[0.7253624 0.2746376]]
+Economic Times,"Now monitor railway punctuality, earnings with 'eDrishti'","25 Feb, 2019",[[0.6700667  0.32993335]]
+Economic Times,Railways to provide 45 acres of surplus land for development of Dharavi,"25 Feb, 2019",[[0.561091   0.43890902]]
+Economic Times,JSPL emerges L1 bidder for railway order, stock up 2%,[[0.6493197  0.35068032]]
+Economic Times,Palace on Wheels: A royal ride on Indian Railways’ luxurious train,"10 Feb, 2019",[[0.85287637 0.1471236 ]]
+Economic Times,JSL Lifestyle launches first dedicated facility for Railways,"18 Feb, 2019",[[0.71641815 0.28358188]]
+Economic Times,Budget 2019: Operating ratio of Indian Railways likely to improve,"2 Feb, 2019,",[[0.5114055  0.48859447]]
+The Hindu,"
+India stops operations of Samjhauta Express "," February 28, 2019",[[0.6374335  0.36256647]]
+The Hindu,"
+Top news of the day: IAF presents proof of Pakistan's use of F-16s, Imran Khan says captured pilot will be released tomorrow, and more "," February 28, 2019",[[0.6458818  0.35411817]]
+The Hindu,"
+IRCTC launches payment aggregator, IRCTC iPay "," February 28, 2019",[[0.6862446 0.3137554]]
+The Hindu,"
+On the move "," February 28, 2019",[[0.6295201  0.37047988]]
+The Hindu,"
+Live updates | IAF displays parts of Amraam missiles as proof that an F-16 attacked Indian military establishment "," February 28, 2019",[[0.595361 0.404639]]
+The Hindu,"
+Pakistan suspends Samjhauta Express train service "," February 28, 2019",[[0.7522089  0.24779116]]
+The Hindu,"
+Rameswaram – Okha express train to stop at Rasipuram "," February 28, 2019",[[0.5979725  0.40202755]]
+The Hindu,"
+Credit goes to Narendra Modi, says BJP "," February 28, 2019",[[0.5939761  0.40602395]]
+The Hindu,"
+‘Cycle-olam’ to woo youth for State’s progress "," February 28, 2019",[[0.59942526 0.40057474]]
+The Hindu,"
+Cigarette smuggling thriving in State airports "," February 28, 2019",[[0.61460185 0.38539815]]
+The Hindu,"
+Waltair division to slip into annals of history "," February 28, 2019",[[0.6785818  0.32141826]]
+The Hindu,"
+Joining Telugu Desam on March 2: Kotla "," February 28, 2019",[[0.7844915  0.21550854]]
+NDTV,"RRB NTPC Notification Released For 35,277 Vacancies, Online Registration From Tomorrow"," February 28, 2019  ",[[0.7079155  0.29208454]]
+NDTV,IRCTC Launches Payment Aggregator iPay: 5 Things To Know," February 28, 2019  ",[[0.67733115 0.32266888]]
+NDTV,Railway RPF SI Exam Result Announced," February 28, 2019  ",[[0.69862145 0.30137852]]
+NDTV,"Andhra Pradesh To Get New Railway Zone, 18th In India: Rail Minister"," February 28, 2019  ",[[0.7773366  0.22266333]]
+NDTV,New Railway Zone Announced For Andhra Pradesh," February 27, 2019  ",[[0.797381   0.20261902]]
+NDTV,"At Least 20 Dead, 43 Injured After Train Crash And Fire At Cairo Station"," February 27, 2019  ",[[0.6022674  0.39773265]]
+NDTV,"Railways Aim At Two-Locomotive Rajdhanis To Save Time, Increase Berths"," February 27, 2019  ",[[0.62867254 0.3713274 ]]
+NDTV,"RRB Group D Result Anytime Soon: Know How, Where To Check"," February 28, 2019  ",[[0.8248455  0.17515446]]
+NDTV,RRB Group D Result: Over 1.17 Crore Await Official Update On Result," February 28, 2019  ",[[0.655034   0.34496602]]
+NDTV,Indian Railways Luggage Rules: Here's All You Need To Know," February 26, 2019  ",[[0.70351845 0.29648155]]
+NDTV,Watch: 2-Kilometre Long Train Runs On Track In Odisha," February 25, 2019  ",[[0.7015376  0.29846236]]
+NDTV,Passengers Can Now See Online How Meals Are Prepared In Railway Kitchens," February 25, 2019  ",[[0.701849 0.298151]]
+NDTV,Piyush Goyal Launches Rail Drishti Dashboard To Track Train Information," February 25, 2019  ",[[0.5150906  0.48490942]]
+NDTV,"Watch: Carrying Injured Man, Madhya Pradesh Cop Runs On Rail Track"," February 24, 2019  ",[[0.7161562  0.28384387]]
+NDTV,"Vande Bharat Express Hit By Stones; Windows, Driver's Screen Damaged"," February 24, 2019  ",[[0.7236204  0.27637962]]
+NDTV,"RRB NTPC Notification Released For 35,277 Vacancies, Online Registration From Tomorrow"," February 28, 2019  ",[[0.7079155  0.29208454]]
+NDTV,IRCTC Launches Payment Aggregator iPay: 5 Things To Know," February 28, 2019  ",[[0.67733115 0.32266888]]
+NDTV,Railway RPF SI Exam Result Announced," February 28, 2019  ",[[0.69862145 0.30137852]]
+NDTV,"Andhra Pradesh To Get New Railway Zone, 18th In India: Rail Minister"," February 28, 2019  ",[[0.7773366  0.22266333]]
+NDTV,New Railway Zone Announced For Andhra Pradesh," February 27, 2019  ",[[0.797381   0.20261902]]
+NDTV,"At Least 20 Dead, 43 Injured After Train Crash And Fire At Cairo Station"," February 27, 2019  ",[[0.6022674  0.39773265]]
+NDTV,"Railways Aim At Two-Locomotive Rajdhanis To Save Time, Increase Berths"," February 27, 2019  ",[[0.62867254 0.3713274 ]]
+NDTV,"RRB Group D Result Anytime Soon: Know How, Where To Check"," February 28, 2019  ",[[0.8248455  0.17515446]]
+NDTV,RRB Group D Result: Over 1.17 Crore Await Official Update On Result," February 28, 2019  ",[[0.655034   0.34496602]]
+NDTV,Indian Railways Luggage Rules: Here's All You Need To Know," February 26, 2019  ",[[0.70351845 0.29648155]]
+NDTV,Watch: 2-Kilometre Long Train Runs On Track In Odisha," February 25, 2019  ",[[0.7015376  0.29846236]]
+NDTV,Passengers Can Now See Online How Meals Are Prepared In Railway Kitchens," February 25, 2019  ",[[0.701849 0.298151]]
+NDTV,Piyush Goyal Launches Rail Drishti Dashboard To Track Train Information," February 25, 2019  ",[[0.5150906  0.48490942]]
+NDTV,"Watch: Carrying Injured Man, Madhya Pradesh Cop Runs On Rail Track"," February 24, 2019  ",[[0.7161562  0.28384387]]
+NDTV,"Vande Bharat Express Hit By Stones; Windows, Driver's Screen Damaged"," February 24, 2019  ",[[0.7236204  0.27637962]]
+TOI,"
+Revamped Bhuj-Dadar train starts service today
+",2019-02-27T23:09:36Z,[[0.79902846 0.20097162]]
+TOI,"
+Now, get rail tickets at ‘last’ minute
+",2019-02-27T22:27:08Z,[[0.66009444 0.33990553]]
+TOI,"
+Part of ECoR's Waltair division to be merged in new railway zone
+",2019-02-27T16:47:45Z,[[0.80432725 0.19567272]]
+TOI,"
+New improved Bhuj-Ahmedabad-Dadar train from Thursday
+",2019-02-27T16:32:35Z,[[0.8577295  0.14227052]]
+TOI,"
+Railways issue security alert across network
+",2019-02-27T09:34:20Z,[[0.7084805  0.29151952]]
+TOI,"
+Vande Bharat set for design tweak to end cattle run over
+",2019-02-26T23:49:45Z,[[0.5865723  0.41342774]]
+TOI,"
+Railway RRC SER Kolkata Apprentice Result 2019 declared @ser.indianrailways.gov.in; download here
+",2019-02-26T04:38:22Z,[[0.6847765 0.3152235]]
+TOI,"
+Vande Bharat’s design aspects to be worked on to deal with problem of cattle run over
+",2019-02-25T17:56:10Z,[[0.667886   0.33211398]]
+TOI,"
+Govt flags Railways' steel import plans, says ‘make in India’
+",2019-02-24T21:26:53Z,[[0.71382993 0.28617004]]
+TOI,"
+1 in works, railways to study 10 more bullet train corridors
+",2019-02-23T07:14:20Z,[[0.6955916 0.3044084]]
+TOI,"
+ST employees remove clothes on second day of indefinite strike in Surat
+",2019-02-22T22:30:00Z,[[0.62051207 0.37948796]]
+TOI,"
+ABB India gets order worth Rs 270 crore from Indian Railways
+",19 Feb 2019,[[0.7876611  0.21233891]]
+TOI,"
+PM Narendra Modi flags off first ever diesel-to-electric converted locomotive in Varanasi
+",19 Feb 2019,[[0.6338893  0.36611068]]
+TOI,"
+Railways rolls out tech to track phones and gold stolen on trains
+",18 Feb 2019,[[0.5145187  0.48548132]]
+TOI,"
+Railway Recruitment Group D result 2018 expected today @rrcb.gov.in; check details here
+",17 Feb 2019,[[0.72597516 0.27402484]]
+TOI,"
+Railways appeal for AAI disqualification alleging participation of ""ineligible players""
+",16 Feb 2019,[[0.5983014  0.40169865]]
+TOI,"
+RRB ALP CBT 2 Answer Key 2018 to be released on February 18; check details here
+",16 Feb 2019,[[0.53724897 0.46275097]]
+TOI,"
+Private firm to conduct civil work at Pune station for 15 years
+",14 Feb 2019,[[0.7619048  0.23809524]]
+TOI,"
+HRIDC working on Palwal-Sonipat rail project: CM Manohar Lal Khattar
+",14 Feb 2019,[[0.71014374 0.28985626]]
+TOI,"
+IRS babu, 90-year-old mom get jail for graft
+",14 Feb 2019,[[0.54599565 0.45400435]]
+TOI,"
+New Rajdhani 1st passenger train with push-pull tech
+",13 Feb 2019,[[0.7839269  0.21607311]]
+TOI,"
+Delhi's Karol Bagh hotel fire: Take leave, wife had asked IRS officer
+",13 Feb 2019,[[0.6727298  0.32727027]]
+TOI,"
+Delhi hotel fire: IRS officer, cook jump to their death
+",12 Feb 2019,[[0.68070644 0.3192936 ]]
+TOI,"
+Delhi: IRS officer jumps from burning hotel in Karol Bagh, dies
+",12 Feb 2019,[[0.7045009  0.29549906]]
+TOI,"
+Another case filed against IRS officer
+",12 Feb 2019,[[0.6200453  0.37995473]]
+TOI,"
+Pune railway station awaits bidder for redevelopment project
+",11 Feb 2019,[[0.7269388  0.27306122]]
+TOI,"
+Amid no jobs chorus, govt claims over 3.79 lakh new jobs in central govt departments
+",10 Feb 2019,[[0.70477146 0.2952285 ]]
+TOI,"
+Railways operating ratio in red till Dec; 10 out of 17 railway zones report losses
+",10 Feb 2019,[[0.51497835 0.48502165]]
+TOI,"
+Railways’ richness highlighted in SECR heritage walk
+",08 Feb 2019,[[0.71823055 0.2817695 ]]
+TOI,"
+Gajanan Mallya appointed new SCR GM
+",07 Feb 2019,[[0.8927847  0.10721529]]
+TOI,"
+Eight arrested in IRS con call centre bust
+",07 Feb 2019,[[0.6679546  0.33204532]]
+TOI,"
+Delhi: Railways won’t sit on the fence any longer, starts barricading tracks
+",07 Feb 2019,[[0.7283531 0.2716469]]
+TOI,"
+600 major railway stations to be redeveloped
+",06 Feb 2019,[[0.57756275 0.42243728]]
+TOI,"
+West Central Railway recruitment 2019: Apply online for 1600 Trade Apprentice posts; direct link here
+",05 Feb 2019,[[0.7165539 0.2834461]]
+TOI,"
+Installation of solar power plant commence at Kozhikode railway station
+",05 Feb 2019,[[0.6961773 0.3038227]]
+TOI,"
+Railway clerk put off duty for piloting train
+",04 Feb 2019,[[0.59991705 0.40008292]]
+TOI,"
+Khadi Express train tracing Gandhiji's life journey to begin operations in 2 months
+",03 Feb 2019,[[0.56119215 0.4388079 ]]
+TOI,"
+India's last unmanned railway crossing was lifeline to 2,000 students
+",03 Feb 2019,[[0.64006525 0.3599348 ]]
+TOI,"
+Legendary Deccan Queen Express to chug with a new look at age of 90
+",31 Jan 2019,[[0.7413696 0.2586304]]
+TOI,"
+Vice President for screening of ‘good’ Hindi films in Rajya Sabha secretariat
+",31 Jan 2019,[[0.58815104 0.4118489 ]]
+TOI,"
+High class refreshing lounge inaugurated for passengers at Visakhapatnam railway station
+",30 Jan 2019,[[0.77763724 0.22236271]]
+TOI,"
+High class refreshing lounge inaugurated for passengers at Visakhapatnam railway station
+",30 Jan 2019,[[0.77763724 0.22236271]]
+TOI,"
+Graduate sells family land to get TC’s job, duped
+",30 Jan 2019,[[0.6747639 0.3252361]]
+Economic Times,Assam to promote brand entity “Awesome Assam” on train,"27 Feb, 2019",[[0.6224896  0.37751043]]
+Economic Times,Samjhauta Express to run as per schedule between Delhi and Attari: Railways,"27 Feb, 2019",[[0.7253624 0.2746376]]
+Economic Times,"Now monitor railway punctuality, earnings with 'eDrishti'","25 Feb, 2019",[[0.6700667  0.32993335]]
+Economic Times,Railways to provide 45 acres of surplus land for development of Dharavi,"25 Feb, 2019",[[0.561091   0.43890902]]
+Economic Times,JSPL emerges L1 bidder for railway order, stock up 2%,[[0.6493197  0.35068032]]
+Economic Times,Palace on Wheels: A royal ride on Indian Railways’ luxurious train,"10 Feb, 2019",[[0.85287637 0.1471236 ]]
+Economic Times,JSL Lifestyle launches first dedicated facility for Railways,"18 Feb, 2019",[[0.71641815 0.28358188]]
+Economic Times,Budget 2019: Operating ratio of Indian Railways likely to improve,"2 Feb, 2019,",[[0.5114055  0.48859447]]
+The Hindu,"
+India stops operations of Samjhauta Express "," February 28, 2019",[[0.6374335  0.36256647]]
+The Hindu,"
+Top news of the day: IAF presents proof of Pakistan's use of F-16s, Imran Khan says captured pilot will be released tomorrow, and more "," February 28, 2019",[[0.6458818  0.35411817]]
+The Hindu,"
+IRCTC launches payment aggregator, IRCTC iPay "," February 28, 2019",[[0.6862446 0.3137554]]
+The Hindu,"
+On the move "," February 28, 2019",[[0.6295201  0.37047988]]
+The Hindu,"
+Live updates | IAF displays parts of Amraam missiles as proof that an F-16 attacked Indian military establishment "," February 28, 2019",[[0.595361 0.404639]]
+The Hindu,"
+Pakistan suspends Samjhauta Express train service "," February 28, 2019",[[0.7522089  0.24779116]]
+The Hindu,"
+Rameswaram – Okha express train to stop at Rasipuram "," February 28, 2019",[[0.5979725  0.40202755]]
+The Hindu,"
+Credit goes to Narendra Modi, says BJP "," February 28, 2019",[[0.5939761  0.40602395]]
+The Hindu,"
+‘Cycle-olam’ to woo youth for State’s progress "," February 28, 2019",[[0.59942526 0.40057474]]
+The Hindu,"
+Cigarette smuggling thriving in State airports "," February 28, 2019",[[0.61460185 0.38539815]]
+The Hindu,"
+Waltair division to slip into annals of history "," February 28, 2019",[[0.6785818  0.32141826]]
+The Hindu,"
+Joining Telugu Desam on March 2: Kotla "," February 28, 2019",[[0.7844915  0.21550854]]
+NDTV,"RRB NTPC Notification Released For 35,277 Vacancies, Online Registration From Tomorrow"," February 28, 2019  ",[[0.7079155  0.29208454]]
+NDTV,IRCTC Launches Payment Aggregator iPay: 5 Things To Know," February 28, 2019  ",[[0.67733115 0.32266888]]
+NDTV,Railway RPF SI Exam Result Announced," February 28, 2019  ",[[0.69862145 0.30137852]]
+NDTV,"Andhra Pradesh To Get New Railway Zone, 18th In India: Rail Minister"," February 28, 2019  ",[[0.7773366  0.22266333]]
+NDTV,New Railway Zone Announced For Andhra Pradesh," February 27, 2019  ",[[0.797381   0.20261902]]
+NDTV,"At Least 20 Dead, 43 Injured After Train Crash And Fire At Cairo Station"," February 27, 2019  ",[[0.6022674  0.39773265]]
+NDTV,"Railways Aim At Two-Locomotive Rajdhanis To Save Time, Increase Berths"," February 27, 2019  ",[[0.62867254 0.3713274 ]]
+NDTV,"RRB Group D Result Anytime Soon: Know How, Where To Check"," February 28, 2019  ",[[0.8248455  0.17515446]]
+NDTV,RRB Group D Result: Over 1.17 Crore Await Official Update On Result," February 28, 2019  ",[[0.655034   0.34496602]]
+NDTV,Indian Railways Luggage Rules: Here's All You Need To Know," February 26, 2019  ",[[0.70351845 0.29648155]]
+NDTV,Watch: 2-Kilometre Long Train Runs On Track In Odisha," February 25, 2019  ",[[0.7015376  0.29846236]]
+NDTV,Passengers Can Now See Online How Meals Are Prepared In Railway Kitchens," February 25, 2019  ",[[0.701849 0.298151]]
+NDTV,Piyush Goyal Launches Rail Drishti Dashboard To Track Train Information," February 25, 2019  ",[[0.5150906  0.48490942]]
+NDTV,"Watch: Carrying Injured Man, Madhya Pradesh Cop Runs On Rail Track"," February 24, 2019  ",[[0.7161562  0.28384387]]
+NDTV,"Vande Bharat Express Hit By Stones; Windows, Driver's Screen Damaged"," February 24, 2019  ",[[0.7236204  0.27637962]]
+NDTV,"RRB NTPC Notification Released For 35,277 Vacancies, Online Registration From Tomorrow"," February 28, 2019  ",[[0.7079155  0.29208454]]
+NDTV,IRCTC Launches Payment Aggregator iPay: 5 Things To Know," February 28, 2019  ",[[0.67733115 0.32266888]]
+NDTV,Railway RPF SI Exam Result Announced," February 28, 2019  ",[[0.69862145 0.30137852]]
+NDTV,"Andhra Pradesh To Get New Railway Zone, 18th In India: Rail Minister"," February 28, 2019  ",[[0.7773366  0.22266333]]
+NDTV,New Railway Zone Announced For Andhra Pradesh," February 27, 2019  ",[[0.797381   0.20261902]]
+NDTV,"At Least 20 Dead, 43 Injured After Train Crash And Fire At Cairo Station"," February 27, 2019  ",[[0.6022674  0.39773265]]
+NDTV,"Railways Aim At Two-Locomotive Rajdhanis To Save Time, Increase Berths"," February 27, 2019  ",[[0.62867254 0.3713274 ]]
+NDTV,"RRB Group D Result Anytime Soon: Know How, Where To Check"," February 28, 2019  ",[[0.8248455  0.17515446]]
+NDTV,RRB Group D Result: Over 1.17 Crore Await Official Update On Result," February 28, 2019  ",[[0.655034   0.34496602]]
+NDTV,Indian Railways Luggage Rules: Here's All You Need To Know," February 26, 2019  ",[[0.70351845 0.29648155]]
+NDTV,Watch: 2-Kilometre Long Train Runs On Track In Odisha," February 25, 2019  ",[[0.7015376  0.29846236]]
+NDTV,Passengers Can Now See Online How Meals Are Prepared In Railway Kitchens," February 25, 2019  ",[[0.701849 0.298151]]
+NDTV,Piyush Goyal Launches Rail Drishti Dashboard To Track Train Information," February 25, 2019  ",[[0.5150906  0.48490942]]
+NDTV,"Watch: Carrying Injured Man, Madhya Pradesh Cop Runs On Rail Track"," February 24, 2019  ",[[0.7161562  0.28384387]]
+NDTV,"Vande Bharat Express Hit By Stones; Windows, Driver's Screen Damaged"," February 24, 2019  ",[[0.7236204  0.27637962]]
+TOI,"
+Revamped Bhuj-Dadar train starts service today
+",2019-02-27T23:09:36Z,[[0.79902846 0.20097162]]
+TOI,"
+Now, get rail tickets at ‘last’ minute
+",2019-02-27T22:27:08Z,[[0.66009444 0.33990553]]
+TOI,"
+Part of ECoR's Waltair division to be merged in new railway zone
+",2019-02-27T16:47:45Z,[[0.80432725 0.19567272]]
+TOI,"
+New improved Bhuj-Ahmedabad-Dadar train from Thursday
+",2019-02-27T16:32:35Z,[[0.8577295  0.14227052]]
+TOI,"
+Railways issue security alert across network
+",2019-02-27T09:34:20Z,[[0.7084805  0.29151952]]
+TOI,"
+Vande Bharat set for design tweak to end cattle run over
+",2019-02-26T23:49:45Z,[[0.5865723  0.41342774]]
+TOI,"
+Railway RRC SER Kolkata Apprentice Result 2019 declared @ser.indianrailways.gov.in; download here
+",2019-02-26T04:38:22Z,[[0.6847765 0.3152235]]
+TOI,"
+Vande Bharat’s design aspects to be worked on to deal with problem of cattle run over
+",2019-02-25T17:56:10Z,[[0.667886   0.33211398]]
+TOI,"
+Govt flags Railways' steel import plans, says ‘make in India’
+",2019-02-24T21:26:53Z,[[0.71382993 0.28617004]]
+TOI,"
+1 in works, railways to study 10 more bullet train corridors
+",2019-02-23T07:14:20Z,[[0.6955916 0.3044084]]
+TOI,"
+ST employees remove clothes on second day of indefinite strike in Surat
+",2019-02-22T22:30:00Z,[[0.62051207 0.37948796]]
+TOI,"
+ABB India gets order worth Rs 270 crore from Indian Railways
+",19 Feb 2019,[[0.7876611  0.21233891]]
+TOI,"
+PM Narendra Modi flags off first ever diesel-to-electric converted locomotive in Varanasi
+",19 Feb 2019,[[0.6338893  0.36611068]]
+TOI,"
+Railways rolls out tech to track phones and gold stolen on trains
+",18 Feb 2019,[[0.5145187  0.48548132]]
+TOI,"
+Railway Recruitment Group D result 2018 expected today @rrcb.gov.in; check details here
+",17 Feb 2019,[[0.72597516 0.27402484]]
+TOI,"
+Railways appeal for AAI disqualification alleging participation of ""ineligible players""
+",16 Feb 2019,[[0.5983014  0.40169865]]
+TOI,"
+RRB ALP CBT 2 Answer Key 2018 to be released on February 18; check details here
+",16 Feb 2019,[[0.53724897 0.46275097]]
+TOI,"
+Private firm to conduct civil work at Pune station for 15 years
+",14 Feb 2019,[[0.7619048  0.23809524]]
+TOI,"
+HRIDC working on Palwal-Sonipat rail project: CM Manohar Lal Khattar
+",14 Feb 2019,[[0.71014374 0.28985626]]
+TOI,"
+IRS babu, 90-year-old mom get jail for graft
+",14 Feb 2019,[[0.54599565 0.45400435]]
+TOI,"
+New Rajdhani 1st passenger train with push-pull tech
+",13 Feb 2019,[[0.7839269  0.21607311]]
+TOI,"
+Delhi's Karol Bagh hotel fire: Take leave, wife had asked IRS officer
+",13 Feb 2019,[[0.6727298  0.32727027]]
+TOI,"
+Delhi hotel fire: IRS officer, cook jump to their death
+",12 Feb 2019,[[0.68070644 0.3192936 ]]
+TOI,"
+Delhi: IRS officer jumps from burning hotel in Karol Bagh, dies
+",12 Feb 2019,[[0.7045009  0.29549906]]
+TOI,"
+Another case filed against IRS officer
+",12 Feb 2019,[[0.6200453  0.37995473]]
+TOI,"
+Pune railway station awaits bidder for redevelopment project
+",11 Feb 2019,[[0.7269388  0.27306122]]
+TOI,"
+Amid no jobs chorus, govt claims over 3.79 lakh new jobs in central govt departments
+",10 Feb 2019,[[0.70477146 0.2952285 ]]
+TOI,"
+Railways operating ratio in red till Dec; 10 out of 17 railway zones report losses
+",10 Feb 2019,[[0.51497835 0.48502165]]
+TOI,"
+Railways’ richness highlighted in SECR heritage walk
+",08 Feb 2019,[[0.71823055 0.2817695 ]]
+TOI,"
+Gajanan Mallya appointed new SCR GM
+",07 Feb 2019,[[0.8927847  0.10721529]]
+TOI,"
+Eight arrested in IRS con call centre bust
+",07 Feb 2019,[[0.6679546  0.33204532]]
+TOI,"
+Delhi: Railways won’t sit on the fence any longer, starts barricading tracks
+",07 Feb 2019,[[0.7283531 0.2716469]]
+TOI,"
+600 major railway stations to be redeveloped
+",06 Feb 2019,[[0.57756275 0.42243728]]
+TOI,"
+West Central Railway recruitment 2019: Apply online for 1600 Trade Apprentice posts; direct link here
+",05 Feb 2019,[[0.7165539 0.2834461]]
+TOI,"
+Installation of solar power plant commence at Kozhikode railway station
+",05 Feb 2019,[[0.6961773 0.3038227]]
+TOI,"
+Railway clerk put off duty for piloting train
+",04 Feb 2019,[[0.59991705 0.40008292]]
+TOI,"
+Khadi Express train tracing Gandhiji's life journey to begin operations in 2 months
+",03 Feb 2019,[[0.56119215 0.4388079 ]]
+TOI,"
+India's last unmanned railway crossing was lifeline to 2,000 students
+",03 Feb 2019,[[0.64006525 0.3599348 ]]
+TOI,"
+Legendary Deccan Queen Express to chug with a new look at age of 90
+",31 Jan 2019,[[0.7413696 0.2586304]]
+TOI,"
+Vice President for screening of ‘good’ Hindi films in Rajya Sabha secretariat
+",31 Jan 2019,[[0.58815104 0.4118489 ]]
+TOI,"
+High class refreshing lounge inaugurated for passengers at Visakhapatnam railway station
+",30 Jan 2019,[[0.77763724 0.22236271]]
+TOI,"
+High class refreshing lounge inaugurated for passengers at Visakhapatnam railway station
+",30 Jan 2019,[[0.77763724 0.22236271]]
+TOI,"
+Graduate sells family land to get TC’s job, duped
+",30 Jan 2019,[[0.6747639 0.3252361]]
+Economic Times,Assam to promote brand entity “Awesome Assam” on train,"27 Feb, 2019",[[0.6224896  0.37751043]]
+Economic Times,Samjhauta Express to run as per schedule between Delhi and Attari: Railways,"27 Feb, 2019",[[0.7253624 0.2746376]]
+Economic Times,"Now monitor railway punctuality, earnings with 'eDrishti'","25 Feb, 2019",[[0.6700667  0.32993335]]
+Economic Times,Railways to provide 45 acres of surplus land for development of Dharavi,"25 Feb, 2019",[[0.561091   0.43890902]]
+Economic Times,JSPL emerges L1 bidder for railway order, stock up 2%,[[0.6493197  0.35068032]]
+Economic Times,Palace on Wheels: A royal ride on Indian Railways’ luxurious train,"10 Feb, 2019",[[0.85287637 0.1471236 ]]
+Economic Times,JSL Lifestyle launches first dedicated facility for Railways,"18 Feb, 2019",[[0.71641815 0.28358188]]
+Economic Times,Budget 2019: Operating ratio of Indian Railways likely to improve,"2 Feb, 2019,",[[0.5114055  0.48859447]]
+The Hindu,"
+India stops operations of Samjhauta Express "," February 28, 2019",[[0.6374335  0.36256647]]
+The Hindu,"
+Top news of the day: IAF presents proof of Pakistan's use of F-16s, Imran Khan says captured pilot will be released tomorrow, and more "," February 28, 2019",[[0.6458818  0.35411817]]
+The Hindu,"
+IRCTC launches payment aggregator, IRCTC iPay "," February 28, 2019",[[0.6862446 0.3137554]]
+The Hindu,"
+On the move "," February 28, 2019",[[0.6295201  0.37047988]]
+The Hindu,"
+Live updates | IAF displays parts of Amraam missiles as proof that an F-16 attacked Indian military establishment "," February 28, 2019",[[0.595361 0.404639]]
+The Hindu,"
+Pakistan suspends Samjhauta Express train service "," February 28, 2019",[[0.7522089  0.24779116]]
+The Hindu,"
+Rameswaram – Okha express train to stop at Rasipuram "," February 28, 2019",[[0.5979725  0.40202755]]
+The Hindu,"
+Credit goes to Narendra Modi, says BJP "," February 28, 2019",[[0.5939761  0.40602395]]
+The Hindu,"
+‘Cycle-olam’ to woo youth for State’s progress "," February 28, 2019",[[0.59942526 0.40057474]]
+The Hindu,"
+Cigarette smuggling thriving in State airports "," February 28, 2019",[[0.61460185 0.38539815]]
+The Hindu,"
+Waltair division to slip into annals of history "," February 28, 2019",[[0.6785818  0.32141826]]
+The Hindu,"
+Joining Telugu Desam on March 2: Kotla "," February 28, 2019",[[0.7844915  0.21550854]]
+NDTV,"RRB NTPC Notification Released For 35,277 Vacancies, Online Registration From Tomorrow"," February 28, 2019  ",[[0.7079155  0.29208454]]
+NDTV,IRCTC Launches Payment Aggregator iPay: 5 Things To Know," February 28, 2019  ",[[0.67733115 0.32266888]]
+NDTV,Railway RPF SI Exam Result Announced," February 28, 2019  ",[[0.69862145 0.30137852]]
+NDTV,"Andhra Pradesh To Get New Railway Zone, 18th In India: Rail Minister"," February 28, 2019  ",[[0.7773366  0.22266333]]
+NDTV,New Railway Zone Announced For Andhra Pradesh," February 27, 2019  ",[[0.797381   0.20261902]]
+NDTV,"At Least 20 Dead, 43 Injured After Train Crash And Fire At Cairo Station"," February 27, 2019  ",[[0.6022674  0.39773265]]
+NDTV,"Railways Aim At Two-Locomotive Rajdhanis To Save Time, Increase Berths"," February 27, 2019  ",[[0.62867254 0.3713274 ]]
+NDTV,"RRB Group D Result Anytime Soon: Know How, Where To Check"," February 28, 2019  ",[[0.8248455  0.17515446]]
+NDTV,RRB Group D Result: Over 1.17 Crore Await Official Update On Result," February 28, 2019  ",[[0.655034   0.34496602]]
+NDTV,Indian Railways Luggage Rules: Here's All You Need To Know," February 26, 2019  ",[[0.70351845 0.29648155]]
+NDTV,Watch: 2-Kilometre Long Train Runs On Track In Odisha," February 25, 2019  ",[[0.7015376  0.29846236]]
+NDTV,Passengers Can Now See Online How Meals Are Prepared In Railway Kitchens," February 25, 2019  ",[[0.701849 0.298151]]
+NDTV,Piyush Goyal Launches Rail Drishti Dashboard To Track Train Information," February 25, 2019  ",[[0.5150906  0.48490942]]
+NDTV,"Watch: Carrying Injured Man, Madhya Pradesh Cop Runs On Rail Track"," February 24, 2019  ",[[0.7161562  0.28384387]]
+NDTV,"Vande Bharat Express Hit By Stones; Windows, Driver's Screen Damaged"," February 24, 2019  ",[[0.7236204  0.27637962]]
+NDTV,"RRB NTPC Notification Released For 35,277 Vacancies, Online Registration From Tomorrow"," February 28, 2019  ",[[0.7079155  0.29208454]]
+NDTV,IRCTC Launches Payment Aggregator iPay: 5 Things To Know," February 28, 2019  ",[[0.67733115 0.32266888]]
+NDTV,Railway RPF SI Exam Result Announced," February 28, 2019  ",[[0.69862145 0.30137852]]
+NDTV,"Andhra Pradesh To Get New Railway Zone, 18th In India: Rail Minister"," February 28, 2019  ",[[0.7773366  0.22266333]]
+NDTV,New Railway Zone Announced For Andhra Pradesh," February 27, 2019  ",[[0.797381   0.20261902]]
+NDTV,"At Least 20 Dead, 43 Injured After Train Crash And Fire At Cairo Station"," February 27, 2019  ",[[0.6022674  0.39773265]]
+NDTV,"Railways Aim At Two-Locomotive Rajdhanis To Save Time, Increase Berths"," February 27, 2019  ",[[0.62867254 0.3713274 ]]
+NDTV,"RRB Group D Result Anytime Soon: Know How, Where To Check"," February 28, 2019  ",[[0.8248455  0.17515446]]
+NDTV,RRB Group D Result: Over 1.17 Crore Await Official Update On Result," February 28, 2019  ",[[0.655034   0.34496602]]
+NDTV,Indian Railways Luggage Rules: Here's All You Need To Know," February 26, 2019  ",[[0.70351845 0.29648155]]
+NDTV,Watch: 2-Kilometre Long Train Runs On Track In Odisha," February 25, 2019  ",[[0.7015376  0.29846236]]
+NDTV,Passengers Can Now See Online How Meals Are Prepared In Railway Kitchens," February 25, 2019  ",[[0.701849 0.298151]]
+NDTV,Piyush Goyal Launches Rail Drishti Dashboard To Track Train Information," February 25, 2019  ",[[0.5150906  0.48490942]]
+NDTV,"Watch: Carrying Injured Man, Madhya Pradesh Cop Runs On Rail Track"," February 24, 2019  ",[[0.7161562  0.28384387]]
+NDTV,"Vande Bharat Express Hit By Stones; Windows, Driver's Screen Damaged"," February 24, 2019  ",[[0.7236204  0.27637962]]
+TOI,"
+Revamped Bhuj-Dadar train starts service today
+",2019-02-27T23:09:36Z,[[0.79902846 0.20097162]]
+TOI,"
+Now, get rail tickets at ‘last’ minute
+",2019-02-27T22:27:08Z,[[0.66009444 0.33990553]]
+TOI,"
+Part of ECoR's Waltair division to be merged in new railway zone
+",2019-02-27T16:47:45Z,[[0.80432725 0.19567272]]
+TOI,"
+New improved Bhuj-Ahmedabad-Dadar train from Thursday
+",2019-02-27T16:32:35Z,[[0.8577295  0.14227052]]
+TOI,"
+Railways issue security alert across network
+",2019-02-27T09:34:20Z,[[0.7084805  0.29151952]]
+TOI,"
+Vande Bharat set for design tweak to end cattle run over
+",2019-02-26T23:49:45Z,[[0.5865723  0.41342774]]
+TOI,"
+Railway RRC SER Kolkata Apprentice Result 2019 declared @ser.indianrailways.gov.in; download here
+",2019-02-26T04:38:22Z,[[0.6847765 0.3152235]]
+TOI,"
+Vande Bharat’s design aspects to be worked on to deal with problem of cattle run over
+",2019-02-25T17:56:10Z,[[0.667886   0.33211398]]
+TOI,"
+Govt flags Railways' steel import plans, says ‘make in India’
+",2019-02-24T21:26:53Z,[[0.71382993 0.28617004]]
+TOI,"
+1 in works, railways to study 10 more bullet train corridors
+",2019-02-23T07:14:20Z,[[0.6955916 0.3044084]]
+TOI,"
+ST employees remove clothes on second day of indefinite strike in Surat
+",2019-02-22T22:30:00Z,[[0.62051207 0.37948796]]
+TOI,"
+ABB India gets order worth Rs 270 crore from Indian Railways
+",19 Feb 2019,[[0.7876611  0.21233891]]
+TOI,"
+PM Narendra Modi flags off first ever diesel-to-electric converted locomotive in Varanasi
+",19 Feb 2019,[[0.6338893  0.36611068]]
+TOI,"
+Railways rolls out tech to track phones and gold stolen on trains
+",18 Feb 2019,[[0.5145187  0.48548132]]
+TOI,"
+Railway Recruitment Group D result 2018 expected today @rrcb.gov.in; check details here
+",17 Feb 2019,[[0.72597516 0.27402484]]
+TOI,"
+Railways appeal for AAI disqualification alleging participation of ""ineligible players""
+",16 Feb 2019,[[0.5983014  0.40169865]]
+TOI,"
+RRB ALP CBT 2 Answer Key 2018 to be released on February 18; check details here
+",16 Feb 2019,[[0.53724897 0.46275097]]
+TOI,"
+Private firm to conduct civil work at Pune station for 15 years
+",14 Feb 2019,[[0.7619048  0.23809524]]
+TOI,"
+HRIDC working on Palwal-Sonipat rail project: CM Manohar Lal Khattar
+",14 Feb 2019,[[0.71014374 0.28985626]]
+TOI,"
+IRS babu, 90-year-old mom get jail for graft
+",14 Feb 2019,[[0.54599565 0.45400435]]
+TOI,"
+New Rajdhani 1st passenger train with push-pull tech
+",13 Feb 2019,[[0.7839269  0.21607311]]
+TOI,"
+Delhi's Karol Bagh hotel fire: Take leave, wife had asked IRS officer
+",13 Feb 2019,[[0.6727298  0.32727027]]
+TOI,"
+Delhi hotel fire: IRS officer, cook jump to their death
+",12 Feb 2019,[[0.68070644 0.3192936 ]]
+TOI,"
+Delhi: IRS officer jumps from burning hotel in Karol Bagh, dies
+",12 Feb 2019,[[0.7045009  0.29549906]]
+TOI,"
+Another case filed against IRS officer
+",12 Feb 2019,[[0.6200453  0.37995473]]
+TOI,"
+Pune railway station awaits bidder for redevelopment project
+",11 Feb 2019,[[0.7269388  0.27306122]]
+TOI,"
+Amid no jobs chorus, govt claims over 3.79 lakh new jobs in central govt departments
+",10 Feb 2019,[[0.70477146 0.2952285 ]]
+TOI,"
+Railways operating ratio in red till Dec; 10 out of 17 railway zones report losses
+",10 Feb 2019,[[0.51497835 0.48502165]]
+TOI,"
+Railways’ richness highlighted in SECR heritage walk
+",08 Feb 2019,[[0.71823055 0.2817695 ]]
+TOI,"
+Gajanan Mallya appointed new SCR GM
+",07 Feb 2019,[[0.8927847  0.10721529]]
+TOI,"
+Eight arrested in IRS con call centre bust
+",07 Feb 2019,[[0.6679546  0.33204532]]
+TOI,"
+Delhi: Railways won’t sit on the fence any longer, starts barricading tracks
+",07 Feb 2019,[[0.7283531 0.2716469]]
+TOI,"
+600 major railway stations to be redeveloped
+",06 Feb 2019,[[0.57756275 0.42243728]]
+TOI,"
+West Central Railway recruitment 2019: Apply online for 1600 Trade Apprentice posts; direct link here
+",05 Feb 2019,[[0.7165539 0.2834461]]
+TOI,"
+Installation of solar power plant commence at Kozhikode railway station
+",05 Feb 2019,[[0.6961773 0.3038227]]
+TOI,"
+Railway clerk put off duty for piloting train
+",04 Feb 2019,[[0.59991705 0.40008292]]
+TOI,"
+Khadi Express train tracing Gandhiji's life journey to begin operations in 2 months
+",03 Feb 2019,[[0.56119215 0.4388079 ]]
+TOI,"
+India's last unmanned railway crossing was lifeline to 2,000 students
+",03 Feb 2019,[[0.64006525 0.3599348 ]]
+TOI,"
+Legendary Deccan Queen Express to chug with a new look at age of 90
+",31 Jan 2019,[[0.7413696 0.2586304]]
+TOI,"
+Vice President for screening of ‘good’ Hindi films in Rajya Sabha secretariat
+",31 Jan 2019,[[0.58815104 0.4118489 ]]
+TOI,"
+High class refreshing lounge inaugurated for passengers at Visakhapatnam railway station
+",30 Jan 2019,[[0.77763724 0.22236271]]
+TOI,"
+High class refreshing lounge inaugurated for passengers at Visakhapatnam railway station
+",30 Jan 2019,[[0.77763724 0.22236271]]
+TOI,"
+Graduate sells family land to get TC’s job, duped
+",30 Jan 2019,[[0.6747639 0.3252361]]
