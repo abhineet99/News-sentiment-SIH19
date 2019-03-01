@@ -35,22 +35,27 @@ inputMatrix = pd.read_csv(SOURCE)
 clen = len ( inputMatrix['Headline'] )
 tokenizer = Tokenizer(num_words=10000) 
 
-y_pred = []
-y_label = []
+y_pred_pos = []
+y_pred_neg = []
+print (clen)
 for i in range(clen):
 	try:
 		headLine = inputMatrix['Headline'][i]
 		testArr = convert_text_to_index_array(headLine)
-		if not inputMatrix['Sentiment'][i]:
-			y_pred.append(inputMatrix['Sentiment'][i])
+		if not inputMatrix['Positive'][i]:
+			y_pred_pos.append(inputMatrix['Positive'][i])
+			y_pred_neg.append(inputMatrix['Negative'][i])
 			continue
 		headLineInp = tokenizer.sequences_to_matrix([testArr], mode='binary')
 		pred = model.predict(headLineInp)
-		y_pred.append(pred)
+		y_pred_pos.append(pred[0][0])
+		y_pred_neg.append(pred[0][1])
 	except AttributeError:
 		break
-raw_data = {'Source': inputMatrix['Source'] ,'Headline': inputMatrix['Headline'], 'Date' : inputMatrix['Date'],  'Sentiment':  y_pred }
-df = pd.DataFrame(raw_data, columns = ['Source', 'Headline' , 'Date' , 'Sentiment'])
+
+print(len(y_pred_pos))
+raw_data = {'Source': inputMatrix['Source'] ,'Headline': inputMatrix['Headline'], 'Date' : inputMatrix['Date'],  'Positive':  y_pred_pos , 'Negative' : y_pred_neg }
+df = pd.DataFrame(raw_data, columns = ['Source', 'Headline' , 'Date' , 'Positive' , 'Negative'])
 df.to_csv(DESTINATION, sep = ',' , index= False)
 
 	
