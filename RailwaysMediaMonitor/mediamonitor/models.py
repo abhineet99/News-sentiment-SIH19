@@ -1,20 +1,17 @@
 from django.db import models
 
 # Create your models here.
-class NEWS(models.Model):
-	SNo 		= models.IntegerField()
-	Datetime 	= models.DateTimeField()
-	News 		= models.TextField()
-	Sentiments 	= models.TextField()
-	Senscore 	= models.IntegerField()
-	reference   = models.TextField(default='Times Of India')
-	urlchahiye  = models.URLField(default='https://docs.djangoproject.com/en/2.1/ref/models/fields/')
+class News(models.Model):
+	#SNo 		= models.IntegerField()
+	date = models.DateField()
+	headline = models.CharField(default = "no headline", max_length=1000)
+	sentiment_score = models.IntegerField()
+	sentiment = models.CharField(max_length=100)
+	source = models.CharField(max_length=200, default="no source")
+	sourceURL = models.URLField(default='https://google.com')
 
 	def __unicode__(self):
-		return self.title
+		return self.headline + " "+ self.source
 
-	def save(self, *args, **kwargs):
-		if not self.slug:
-			self.slug = slugify(self.title)[:50]
-
-		return super(NEWS, self).save(*args,**kwargs)
+	def __str__(self):
+		return self.headline +" "+self.source

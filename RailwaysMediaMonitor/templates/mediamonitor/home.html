@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Media monitoring service for the ministry of Railways">
+        <meta name="keywords" content="Media, Sentiment, Monitor, Railways">
+        <meta name="author" content="ateamhasnoname">
+        <title>Media Monitor</title>
+
+        {% comment %} bootstrap linking {% endcomment %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        {% comment %} Google Fonts {% endcomment %}
+        <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet"> 
+    </head>
+    <body id = "body">
+        <div class="container">
+            <div class="row">
+                <h1 class="jumbotron" id = "monitor-title">Railways Media Monitoring System</h1>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Headline</th>
+                                <th>Sentiment Score</th>
+                                <th>Sentiment</th>
+                                <th>Source</th>
+                                <th>Source URL</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            {% for item in news_data %}
+                                {% if forloop.counter|divisibleby:2 %}
+                                    <tr>
+                                {% else %}
+                                    <tr  class="table-info">
+                                {% endif %}
+                                        <td scope="row">{{ item.id }}</td>
+                                        <td>{{ item.date }}</td>
+                                        <td>{{ item.headline }}</td>
+                                        <td>{{ item.sentiment_score }}</td>
+                                        <td>{{ item.sentiment }}</td>
+                                        <td>{{ item.source }}</td>
+                                        <td><a href="{{ item.sourceURL }}">Go To Source</td>
+                                    </tr>
+                            {% endfor %}
+            
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
