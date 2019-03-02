@@ -85,6 +85,6 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			print(e)
 
 
-		writer=csv.writer(csvfile)
-		writer.writerow([source,headline,url,to_print,details,image_url])
+		# writer=csv.writer(csvfile)
+		# writer.writerow([source,headline,url,to_print,details,image_url])
 
