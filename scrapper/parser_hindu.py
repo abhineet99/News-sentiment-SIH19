@@ -1,4 +1,7 @@
 #this is a scrapper of The Hindu website, extracts a day's news
+import pandas as pd
+import similarity_checker
+
 import requests
 import csv
 from datetime import datetime
@@ -18,6 +21,9 @@ soup= bsp(data,'html.parser')
 results = soup.findAll("div", {"class" : "75_1x_StoryCard mobile-padding"})
 #print (results)
 with open("news_from_scrapper.csv","a") as csvfile:
+
+	headline_file = open("headlines.csv","a")
+
 	for tag in results:
 	#  	#soup=bsp(tag)
 		headline = tag.find("a", {"class" : "story-card75x1-text"})
@@ -53,10 +59,33 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			headline=headline.decode('utf-8')
 			#datetime_object = to_print.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 			details=details.decode('utf-8')
-			
+			try:
+				#Here check if the headline is similar to any of the existing headlines in the csv file
+
+				#use pandas to read the headlines file
+				headlines_df = pd.read_csv('headlines.csv')
+				is_similar = False
+				for row_num in range(len(headlines_df)):
+					#compare the headlien to the ones already there in the csv file
+					if similarity_checker.similar(headlines_df.at[row_num, 'Headline'], headline):#if its similar
+						is_similar = True
+				#once out of the loop, check if is_similar is true
+				if not is_similar:
+					writer=csv.writer(csvfile)
+					writer.writerow([source,headline,headline_url,to_print,details,image_url])
+
+				headline_writer=csv.writer(headline_file)
+				try:
+					#append the new headline to the csv file
+					headline_writer.writerow([headline])
+					#close the headlines file
+					
+				except Exception as e:
+					print(e)
+				
+			except Exception as e:
+				print(e)
+
+
 			writer=csv.writer(csvfile)
-			writer.writerow([source,headline,headline_url,to_print,details,image_url])
-			#except UnicodeEncodeError:
-			#	continue
-	# 	#date_time_formatted= date_time.string
-	# 	print('\n')
+			writer.writerow([source,headline,url,to_print,details,image_url])

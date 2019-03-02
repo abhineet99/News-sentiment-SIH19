@@ -1,4 +1,8 @@
 #this is a scrapper of finexpress website
+import pandas as pd
+import similarity_checker
+
+
 import requests
 import csv
 from datetime import datetime
@@ -12,6 +16,9 @@ soup= bsp(data,'html.parser')
 results = soup.findAll("div", {"class" :"listitembx"})
 #print (results)
 with open("news_from_scrapper.csv","a") as csvfile:
+
+	headline_file = open("headlines.csv","a")
+
 	for tag in results:
 	# 	# #  	#soup=bsp(tag)
 		headline_head = tag.find("h3")
@@ -48,38 +55,36 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		date_time=date_time
 		headline=headline
 		image_url=image_url
+
+
+		try:
+			#Here check if the headline is similar to any of the existing headlines in the csv file
+
+			#use pandas to read the headlines file
+			headlines_df = pd.read_csv('headlines.csv')
+			is_similar = False
+			for row_num in range(len(headlines_df)):
+				#compare the headlien to the ones already there in the csv file
+				if similarity_checker.similar(headlines_df.at[row_num, 'Headline'], headline):#if its similar
+					is_similar = True
+			#once out of the loop, check if is_similar is true
+			if not is_similar:
+				writer=csv.writer(csvfile)
+				writer.writerow([source,headline,headline_url,to_print,details,image_url])
+
+			headline_writer=csv.writer(headline_file)
+			try:
+				#append the new headline to the csv file
+				headline_writer.writerow([headline])
+				#close the headlines file
+				
+			except Exception as e:
+				print(e)
+			
+		except Exception as e:
+			print(e)
+
+
 		writer=csv.writer(csvfile)
 		writer.writerow([source,headline,url,to_print,details,image_url])
 
-
-# 		#print(headline.string)
-# 		date_time= tag.find("time")
-# 		#my_string=date_time.contents[1]
-# 		headline_url="https://economictimes.indiatimes.com"
-# 		headline_url2=tag.find("a")
-# 		headline_url2=headline_url2['href']
-# 		headline_url=headline_url+headline_url2
-# 		#print(headline_url)
-# 		to_print=date_time.string
-# 		details=tag.find("p")
-# 		details=details.string
-# 		#print(details)
-# 		try:
-# 			to_print=to_print[0:12]
-# 			#print(to_print)
-# 			datetime_object = datetime.strptime(to_print, '%d %b, %Y')
-# 			to_print=datetime_object.strftime('%B %d, %Y')
-# 		except ValueError:
- 		#	datetime_object = datetime.strptime(to_print, '%d %b, %Y,')
- 		#	to_print=datetime_object.strftime('%B %d, %Y')
-# 		except TypeError:
-# 			to_print=" "
-
-# 		writer=csv.writer(csvfile)
-# 		try:
-# 			writer.writerow([source,headline.string,headline_url,to_print,details])
-# 		except UnicodeEncodeError:
-# 			continue
-# 		#print(to_print)
-# 			#date_time_formatted= date_time.string
-# 		#print('\n')
