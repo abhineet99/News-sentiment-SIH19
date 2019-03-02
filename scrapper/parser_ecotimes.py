@@ -10,9 +10,16 @@ soup= bsp(data,'html.parser')
 #print(soup)
 
 results = soup.findAll("div", {"class" :"flr topicstry"})
-# #print (results)
+#print (results)
 with open("news_from_scrapper.csv","a") as csvfile:
 	for tag in results:
+		image_tag=tag.find("img")
+		#print(image_tag)
+		try:
+			image_url=image_tag['src']
+			#print(image_url)
+		except:
+			image_url="none"	
 	# #  	#soup=bsp(tag)
 		headline = tag.find("h3")
 		#print(headline.string)
@@ -40,7 +47,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 
 		writer=csv.writer(csvfile)
 		try:
-			writer.writerow([source,headline.string,headline_url,to_print,details])
+			writer.writerow([source,headline.string,headline_url,to_print,details,image_url])
 		except UnicodeEncodeError:
 			continue
 		#print(to_print)

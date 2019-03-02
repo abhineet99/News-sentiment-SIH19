@@ -21,6 +21,14 @@ with open("news_from_scrapper.csv","a") as csvfile:
 	for tag in results:
 	#  	#soup=bsp(tag)
 		headline = tag.find("a", {"class" : "story-card75x1-text"})
+		#image_tag=headline = tag.find("img", {"alt" })
+		image_tag= tag.find("img", {"alt" :True})
+		try:
+			image_url= image_tag['data-src-template']
+		except:
+			image_url=" "
+			
+		#print(image_url)
 	 	#print(headline.string)
 	 	details=tag.find("span", {"class" : "light-gray-color story-card-33-text hidden-xs"})
 	 	details=details.string
@@ -42,7 +50,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			#datetime_object = to_print.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 			details=details.encode('utf-8')
 			writer=csv.writer(csvfile)
-			writer.writerow([source,headline,headline_url,to_print,details])
+			writer.writerow([source,headline,headline_url,to_print,details,image_url])
 			#except UnicodeEncodeError:
 			#	continue
 	# 	#date_time_formatted= date_time.string

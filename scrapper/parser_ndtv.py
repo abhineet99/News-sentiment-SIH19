@@ -19,7 +19,12 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		headline_url=tag.find("a")
 		headline_url=headline_url['href']
 		details=tag.find("p",{"class" : "intro"})
-		
+		image_tag=tag.find("img",{"alt" : True})
+		try:
+			image_url=image_tag['src']
+		except:
+			image_url="none"
+		print(image_url)		
 		#print(headline_url)
 		details=details.string
 		#print(details)
@@ -28,7 +33,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		to_print=to_print[0:20]
 		writer=csv.writer(csvfile)
 		try:
-			writer.writerow([source,headline.string,headline_url,to_print,details])
+			writer.writerow([source,headline.string,headline_url,to_print,details,image_url])
 		except UnicodeEncodeError:
 			continue
 		#print(to_print)

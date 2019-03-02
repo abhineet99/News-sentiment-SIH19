@@ -10,7 +10,7 @@ soup= bsp(data,'html.parser')
 #print(soup)
 
 results = soup.findAll("div", {"class" :"listitembx"})
-# # #print (results)
+#print (results)
 with open("news_from_scrapper.csv","a") as csvfile:
 	for tag in results:
 	# 	# #  	#soup=bsp(tag)
@@ -22,6 +22,14 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		details=details_tag.string
 		details=details.encode('utf-8')
 		headline=headline.encode('utf-8')
+		image_tag=tag.find("img", {"alt":True})
+		#print(image_tag)
+		try:
+			image_url=image_tag['src']
+
+			print(image_url)
+		except:
+			image_url="none"	
 		#print(url)
 		#print(headline)
 		#print(details)
@@ -34,7 +42,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		to_print=datetime_object.strftime('%B %d, %Y')
 		to_print=to_print.encode('utf-8')
 		writer=csv.writer(csvfile)
-		writer.writerow([source,headline,url,to_print,details])
+		writer.writerow([source,headline,url,to_print,details,image_url])
 
 
 # 		#print(headline.string)

@@ -32,11 +32,17 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		
 		#print(to_print[10])
 		writer=csv.writer(csvfile)
-		page2 = requests.get('https://timesofindia.indiatimes.com/city/kolkata/rajdhani-50th-birthday-treat-for-passengers/articleshow/68209484.cms') #the toi railways topic link
+		page2 = requests.get(headline_url) #the toi railways topic link
 		data2 = page2.text
 		details=" "
 		soup2= bsp(data2,'html.parser')
+		#print(soup2)
 		results2 = soup2.findAll("div", {"class" : "Normal"})
+		results3= soup2.find("link",{"rel":"image_src"})
+		#print(results3)
+		image_url=results3['href']
+		print(image_url)
+		image_url=image_url.encode('utf-8')
 		for tag2 in results2:
 			for items2 in tag2:
 		#print(items.encode('utf-8'))
@@ -46,7 +52,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 					if(len(item_string)>1):
 						details=details+item_string
 		try:
-			writer.writerow([source,headline.string,headline_url,to_print,details])
+			writer.writerow([source,headline.string,headline_url,to_print,details,image_url])
 		except UnicodeEncodeError:
 			continue	
 		#date_time_formatted= date_time.string
