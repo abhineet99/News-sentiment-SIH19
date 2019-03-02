@@ -41,7 +41,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		results3= soup2.find("link",{"rel":"image_src"})
 		#print(results3)
 		image_url=results3['href']
-		print(image_url)
+		#print(image_url)
 		image_url=image_url.encode('utf-8')
 		for tag2 in results2:
 			for items2 in tag2:
@@ -50,7 +50,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 				item_string=items2.encode('utf-8')
 				if(item_string[0]!='<'):
 					if(len(item_string)>1):
-						details=details+item_string
+						details=details+item_string.decode("utf-8")
 		try:
 			writer.writerow([source,headline.string,headline_url,to_print,details,image_url])
 		except UnicodeEncodeError:

@@ -27,7 +27,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		try:
 			image_url=image_tag['src']
 
-			print(image_url)
+			#print(image_url)
 		except:
 			image_url="none"	
 		#print(url)
@@ -35,9 +35,10 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		#print(details)
 		date_tag=tag.find("span", {"class" :"minsago"})
 		date_time=date_tag.string
-		date_time=date_time.encode('utf-8')
+		#date_time=date_time.encode('utf-8')
 		#print(date_time)
 		#print('\n')
+		#print(type(date_time))
 		datetime_object = datetime.strptime(date_time, '%b %d, %Y')
 		to_print=datetime_object.strftime('%B %d, %Y')
 		to_print=to_print.encode('utf-8')

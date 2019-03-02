@@ -24,7 +24,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			image_url=image_tag['src']
 		except:
 			image_url="none"
-		print(image_url)		
+		#print(image_url)		
 		#print(headline_url)
 		details=details.string
 		#print(details)

@@ -30,10 +30,10 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			
 		#print(image_url)
 	 	#print(headline.string)
-	 	details=tag.find("span", {"class" : "light-gray-color story-card-33-text hidden-xs"})
-	 	details=details.string
-	 	headline_url=headline['href']
-	 	#print(headline_url)
+		details=tag.find("span", {"class" : "light-gray-color story-card-33-text hidden-xs"})
+		details=details.string
+		headline_url=headline['href']
+		#print(headline_url)
 		rail_news_check=0
 		headline=headline.string
 		headline_words=headline.split()
