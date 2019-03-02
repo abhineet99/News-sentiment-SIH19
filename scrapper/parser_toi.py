@@ -51,11 +51,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 				if(item_string[0]!='<'):
 					if(len(item_string)>1):
 						details=details+item_string.decode("utf-8")
-		headline=(headline.string).decode('utf-8')
-		headline_url=headline_url.decode('utf-8')
-		to_print=to_print.decode('utf-8')
-		details=details.decode('utf-8')
-		image_url=image_url.decode('utf-8')				
+		
 		try:
 			writer.writerow([source,headline,headline_url,to_print,details,image_url])
 		except UnicodeEncodeError:
