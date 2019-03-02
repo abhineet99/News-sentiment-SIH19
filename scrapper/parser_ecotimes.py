@@ -44,10 +44,14 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			to_print=datetime_object.strftime('%B %d, %Y')
 		except TypeError:
 			to_print=" "
-
+		headline=(headline.string).decode('utf-8')
+		headline_url=headline_url.decode('utf-8')
+		to_print=to_print.decode('utf-8')
+		details=details.decode('utf-8')
+		image_url=image_url.decode('utf-8')
 		writer=csv.writer(csvfile)
 		try:
-			writer.writerow([source,headline.string,headline_url,to_print,details,image_url])
+			writer.writerow([source,headline,headline_url,to_print,details,image_url])
 		except UnicodeEncodeError:
 			continue
 		#print(to_print)

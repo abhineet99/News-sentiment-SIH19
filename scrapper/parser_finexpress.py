@@ -46,6 +46,8 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		to_print=to_print.encode('utf-8')
 		to_print=to_print.decode('utf-8')
 		date_time=date_time.decode('utf-8')
+		headline=headline.decode('utf-8')
+		image_url=image_url.decode('utf-8')
 		writer=csv.writer(csvfile)
 		writer.writerow([source,headline,url,to_print,details,image_url])
 

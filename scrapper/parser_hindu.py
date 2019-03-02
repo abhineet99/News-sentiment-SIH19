@@ -53,6 +53,8 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			headline=headline.decode('utf-8')
 			#datetime_object = to_print.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 			details=details.decode('utf-8')
+			headline_url=headline_url.decode('utf-8')
+			image_url=image_url.decode('utf-8')
 			writer=csv.writer(csvfile)
 			writer.writerow([source,headline,headline_url,to_print,details,image_url])
 			#except UnicodeEncodeError:
