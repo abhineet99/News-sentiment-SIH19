@@ -16,10 +16,10 @@ class News(models.Model):
 	def __str__(self):
 		return self.headline +" "+self.source
 
-	def save(self, *args, **kwargs):
-		if not self.slug:
-			self.slug = slugify(self.title)[:50]
+	# def save(self, *args, **kwargs):
+	# 	if not self.slug:
+	# 		self.slug = slugify(self.title)[:50]
 
-		return super(News, self).save(*args, **kwargs)
+		# return super(News, self).save(*args, **kwargs)
 
 	
