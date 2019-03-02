@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -14,19 +16,19 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
         {% comment %} Google Fonts {% endcomment %}
+				 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet"> 
   
   
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="{% static 'mediamonitor/table_style.css' %}">
 
   
 </head>
 
 <body>
-
-  <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Responsive</pan></h1>
-<h2>Created with love by <a href="http://pablogarciafernandez.com" target="_blank">Pablo García Fernández</a></h2>
-
+	<br>
+  <h1><span style = "font-family: 'Roboto', sans-serif;" class="yellow">Railways Media Monitoring Panel</h1>
+	<br><br>
 <table class="container">
     <thead>
         <tr>

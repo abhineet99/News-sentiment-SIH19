@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+
+from adpricing.resources import AdDataResource
+
+ad_data_resource = AdDataResource()
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^api/', include(ad_data_resource.urls))
 ]
