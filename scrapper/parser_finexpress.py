@@ -22,6 +22,8 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		details=details_tag.string
 		details=details.encode('utf-8')
 		headline=headline.encode('utf-8')
+		details=details.decode('utf-8')
+		headline=headline.decode('utf-8')
 		image_tag=tag.find("img", {"alt":True})
 		#print(image_tag)
 		try:
@@ -42,6 +44,8 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		datetime_object = datetime.strptime(date_time, '%b %d, %Y')
 		to_print=datetime_object.strftime('%B %d, %Y')
 		to_print=to_print.encode('utf-8')
+		to_print=to_print.decode('utf-8')
+		date_time=date_time.decode('utf-8')
 		writer=csv.writer(csvfile)
 		writer.writerow([source,headline,url,to_print,details,image_url])
 

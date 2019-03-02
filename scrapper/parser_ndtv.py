@@ -7,7 +7,7 @@ page = requests.get('https://www.ndtv.com/topic/railways') #ndtv railways topic 
 data = page.text
 soup= bsp(data,'html.parser')
 #print(soup)
-
+months=["January","February","March","April","May","June","July","August","September","October","November","December"]
 results = soup.findAll("li", {"style" :"padding: 5px;"})
 #print (results)
 with open("news_from_scrapper.csv","a") as csvfile:
@@ -29,8 +29,17 @@ with open("news_from_scrapper.csv","a") as csvfile:
 		details=details.string
 		#print(details)
 		my_string=date_time.contents[1]
-		to_print=my_string[-38:]
-		to_print=to_print[0:20]
+		#print(my_string)
+		for each in months:
+			check =my_string.find(each)
+			if(check!=-1):
+				break;
+		end_time=check+len(each)+9
+		#print(my_string[check:end_time])		
+
+
+		to_print=my_string[check:end_time]
+		#to_print=to_print[0:20]
 		writer=csv.writer(csvfile)
 		try:
 			writer.writerow([source,headline.string,headline_url,to_print,details,image_url])
