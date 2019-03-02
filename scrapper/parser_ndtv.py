@@ -14,6 +14,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 	for tag in results:
 	# #  	#soup=bsp(tag)
 		headline = tag.find("strong")
+		headline=headline.string
 		#print(headline.string)
 		date_time= tag.find("p",{"class" : "list_dateline"})
 		headline_url=tag.find("a")

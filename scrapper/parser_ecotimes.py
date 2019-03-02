@@ -22,6 +22,7 @@ with open("news_from_scrapper.csv","a") as csvfile:
 			image_url="none"	
 	# #  	#soup=bsp(tag)
 		headline = tag.find("h3")
+		headline=headline.string
 		#print(headline.string)
 		date_time= tag.find("time")
 		#my_string=date_time.contents[1]
