@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en" >
+
+<head>
         <meta charset="UTF-8">
         <meta name="description" content="Media monitoring service for the ministry of Railways">
         <meta name="keywords" content="Media, Sentiment, Monitor, Railways">
@@ -14,51 +15,53 @@
 
         {% comment %} Google Fonts {% endcomment %}
         <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet"> 
-    </head>
-    <body id = "body">
-        <div class="container">
-            <div class="row">
-                <h1 class="jumbotron" id = "monitor-title">Railways Media Monitoring System</h1>
-            </div>
-            <div class="row">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Date</th>
-                                <th>Headline</th>
-                                <th>Sentiment Score</th>
-                                <th>Sentiment</th>
-                                <th>Source</th>
-                                <th>Source URL</th>
+  
+  
+      <link rel="stylesheet" href="css/style.css">
 
-                            </tr>
-                        </thead>
+  
+</head>
 
-                        <tbody>
+<body>
 
-                            {% for item in news_data %}
-                                {% if forloop.counter|divisibleby:2 %}
-                                    <tr>
-                                {% else %}
-                                    <tr  class="table-info">
-                                {% endif %}
-                                        <td scope="row">{{ item.id }}</td>
-                                        <td>{{ item.date }}</td>
-                                        <td>{{ item.headline }}</td>
-                                        <td>{{ item.sentiment_score }}</td>
-                                        <td>{{ item.sentiment }}</td>
-                                        <td>{{ item.source }}</td>
-                                        <td><a href="{{ item.sourceURL }}">Go To Source</td>
-                                    </tr>
-                            {% endfor %}
+  <h1><span class="blue">&lt;</span>Table<span class="blue">&gt;</span> <span class="yellow">Responsive</pan></h1>
+<h2>Created with love by <a href="http://pablogarciafernandez.com" target="_blank">Pablo García Fernández</a></h2>
+
+<table class="container">
+    <thead>
+        <tr>
+            <th><h1>#</h1></th>
+            <th><h1>Date</h1></th>
+            <th><h1>Headline</h1></th>
+            <th><h1>Sentiment Score</h1></th>
+            <th><h1>Sentiment</h1></th>
+            <th><h1>Source</h1></th>
+            <th><h1>Source Url</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+
+            {% for item in news_data %}
+            {% if forloop.counter|divisibleby:2 %}
+            <tr>
+            {% else %}
+            <tr  class="table-info">
+            {% endif %}
+            <td scope="row">{{ item.id }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.headline }}</td>
+            <td>{{ item.sentiment_score }}</td>
+            <td>{{ item.sentiment }}</td>
+            <td>{{ item.source }}</td>
+            <td><a href="{{ item.sourceURL }}">Go To Source</td>
+            </tr>
+            {% endfor %}
             
-                        </tbody>
+     </tbody>
+</table>
+  
+  
 
-                    </table>
-                </div>
-            </div>
-        </div>
-    </body>
+</body>
+
 </html>
