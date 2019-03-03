@@ -25,17 +25,16 @@ class MyHomePageState extends State<MyHomePage>
   int offset = 0;
   User user;
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
-  
+
   String greetings = "Morning ";
   static var _tempNews = News(
-    title: "title",
-    score: 8,
-    sentiment: "sentiment",
-    url: "url",
-    dateTime: "dateTime",
-    source: "source",
-    imageUrl:"newsList"
-  );
+      title: "title",
+      score: 8,
+      sentiment: "sentiment",
+      url: "url",
+      dateTime: "dateTime",
+      source: "source",
+      imageUrl: "newsList");
   var time;
   static var newsList = <News>[
     //  _tempNews, _tempNews, _tempNews, _tempNews,
@@ -90,7 +89,7 @@ class MyHomePageState extends State<MyHomePage>
           'dateTime': newsList[index].dateTime,
           'source': newsList[index].source,
           'id': newsList[index].id,
-          'imageUrl':newsList[index].imageUrl
+          'imageUrl': newsList[index].imageUrl
         };
       } catch (e) {
         print(e);
@@ -106,7 +105,7 @@ class MyHomePageState extends State<MyHomePage>
         'dateTime': newsList[index].dateTime,
         'source': newsList[index].source,
         'id': newsList[index].id,
-        'imageUrl':newsList[index].imageUrl
+        'imageUrl': newsList[index].imageUrl
       };
     }
 
@@ -127,6 +126,7 @@ class MyHomePageState extends State<MyHomePage>
           var news;
           int temp = 0;
           pageNo++;
+          // print(object)
           print("#####adding news######");
           News newNews;
           for (news in responseJson["objects"]) {
@@ -140,7 +140,7 @@ class MyHomePageState extends State<MyHomePage>
                 source: news["source"],
                 id: news["id"],
                 imageUrl: news["imageURL"]);
-                
+
             newsList.add(newNews);
 
             //print(newsList[7]);
@@ -173,6 +173,7 @@ class MyHomePageState extends State<MyHomePage>
         if (response.statusCode == 200) {
           var news;
           int temp = 0;
+          print(responseJson);
           pageNo++;
           print("#####adding news######");
           News newNews;
@@ -186,9 +187,8 @@ class MyHomePageState extends State<MyHomePage>
                 dateTime: news["date"],
                 source: news["source"],
                 id: news["id"],
-                imageUrl: news["imageURL"]
-                );
-                
+                imageUrl: news["imageURL"]);
+
             newsList.add(newNews);
 
             //print(newsList[7]);
@@ -229,7 +229,7 @@ class MyHomePageState extends State<MyHomePage>
         source: productInfo["source"],
         id: productInfo["id"],
         imageUrl: productInfo["imageUrl"]);
-        
+
     print("building news tile:" + news.id.toString());
     return Container(
         padding: EdgeInsets.all(15),
@@ -338,7 +338,118 @@ class MyHomePageState extends State<MyHomePage>
         ));
   }
 
-  static News news = News();
+  Widget newsTile2(
+    News news,
+  ) {
+    print("building news tile:" + news.id.toString());
+    return Container(
+        padding: EdgeInsets.all(15),
+        child: Container(
+          height: 120,
+          decoration: BoxDecoration(
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.grey,
+                //offset: Offset(1.0, 6.0),
+                blurRadius: 4.0,
+              ),
+            ],
+            borderRadius: BorderRadius.circular(10),
+            // color: Colors.red,
+          ),
+          child: Row(
+            children: <Widget>[
+              new Expanded(
+                flex: 2,
+                child: Hero(
+                  tag: "NewsImage" + news.id.toString(),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: NetworkImage(news.imageUrl)),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10))),
+                  ),
+                ),
+              ),
+              new Expanded(
+                flex: 4,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10))),
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: getBar(news),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                            padding: EdgeInsets.fromLTRB(9, 4, 4, 4),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (context) {
+                                  return NewsPage(
+                                    news: news,
+                                  );
+                                }));
+                              },
+                              //    child: Hero(
+                              //      tag: "headline" + i.toString(),
+                              child: Text(news
+                                  .title), //Kritagya k tatte chatta pakda gaya jai, library me lr rahe the kand
+                            )), //),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  alignment: Alignment(-1, 0),
+                                  child: Container(
+                                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                      child: Text(
+                                        news.source,
+                                        style: TextStyle(color: Colors.grey),
+                                      )),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  alignment: Alignment(1, 0),
+                                  child: Container(
+                                      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                      child: Text(news.dateTime,
+                                          style:
+                                              TextStyle(color: Colors.grey))),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  //static News news = News();
   static BuildContext _context;
   static Widget getBar(News news) => Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -349,7 +460,8 @@ class MyHomePageState extends State<MyHomePage>
                 // width: 50,
                 //  height: 150,
                 padding: EdgeInsets.fromLTRB(9, 4, 9, 4),
-                child: Center(child: ((news.sentiment == "Positive") ? good : bad)),
+                child: Center(
+                    child: ((news.sentiment == "Positive") ? good : bad)),
               )),
           Expanded(
               flex: 1,
@@ -380,53 +492,56 @@ class MyHomePageState extends State<MyHomePage>
   TabController _controller;
   int _index;
 
-void firebaseCloudMessaging_Listeners() {
-  if (Platform.isIOS) iOS_Permission();
+  void firebaseCloudMessaging_Listeners() {
+    if (Platform.isIOS) iOS_Permission();
 
-  _firebaseMessaging.getToken().then((token){
-    print("---------token:"+token);
-    //print("--------idToken"+user.id);
-    Firestore.instance.runTransaction((Transaction transaction) async{
-      DocumentReference ref= Firestore.instance.document("users/"+user.emailId);
-      Map<String,String> data1 =<String,String>{
-        "userName": user.name,
-        "tokenId":token,
-      };
-      DocumentSnapshot postSnapshot= await transaction.get(ref);
-      if(!postSnapshot.exists){
-        transaction.set(ref, data1);
-      }
+    _firebaseMessaging.getToken().then((token) {
+      print("---------token:" + token);
+      //print("--------idToken"+user.id);
+      Firestore.instance.runTransaction((Transaction transaction) async {
+        DocumentReference ref =
+            Firestore.instance.document("users/" + user.emailId);
+        Map<String, String> data1 = <String, String>{
+          "userName": user.name,
+          "tokenId": token,
+        };
+        DocumentSnapshot postSnapshot = await transaction.get(ref);
+        if (!postSnapshot.exists) {
+          transaction.set(ref, data1);
+        }
+      });
     });
-  });
 
-  _firebaseMessaging.configure(
-    onMessage: (Map<String, dynamic> message) async {
-      print('on message $message');
-    },
-    onResume: (Map<String, dynamic> message) async {
-      print('on resume $message');
-    },
-    onLaunch: (Map<String, dynamic> message) async {
-      print('on launch $message');
-    },
-  );
-}
+    _firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print('on message $message');
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print('on resume $message');
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print('on launch $message');
+      },
+    );
+  }
 
-void iOS_Permission() {
-  _firebaseMessaging.requestNotificationPermissions(
-      IosNotificationSettings(sound: true, badge: true, alert: true)
-  );
-  _firebaseMessaging.onIosSettingsRegistered
-      .listen((IosNotificationSettings settings)
-  {
-    print("Settings registered: $settings");
-  });
-}
+  void iOS_Permission() {
+    _firebaseMessaging.requestNotificationPermissions(
+        IosNotificationSettings(sound: true, badge: true, alert: true));
+    _firebaseMessaging.onIosSettingsRegistered
+        .listen((IosNotificationSettings settings) {
+      print("Settings registered: $settings");
+    });
+  }
 
   @override
   initState() {
-    
-    SignIn.getUser().then((User user1)=>setState((){user=user1;firebaseCloudMessaging_Listeners();})).catchError((e){
+    SignIn.getUser()
+        .then((User user1) => setState(() {
+              user = user1;
+              firebaseCloudMessaging_Listeners();
+            }))
+        .catchError((e) {
       print(e);
       Navigator.of(context).pushReplacementNamed(SplashScreen.tag);
     });
@@ -436,10 +551,18 @@ void iOS_Permission() {
     _controller.addListener(() {
       maxOut = false;
     });
-    getSize().then((int x) {
-      setState(() {
-        print("settin state. x=" + x.toString());
-        _list = ListView.builder(
+    getSize()
+    .then((int x) => getAll())
+    .then((_) {
+      _list = ListView.builder(itemBuilder: (context, index) {
+        if (index >= newsList.length) {
+          return null;
+        }
+        return newsTile2(newsList[index]);
+        });
+    })
+    .then((_) => setState(() {}));
+    /*   _list = ListView.builder(
           itemCount: x,
           itemBuilder: (context, index) {
             print("itembuilder");
@@ -480,8 +603,7 @@ void iOS_Permission() {
             //print("building news" + i.toString());
           },
         );
-      });
-    });
+*/
 
     super.initState();
   }
@@ -563,7 +685,7 @@ void iOS_Permission() {
             ),
             ListTile(
               title: Text(
-                (user!=null)?greetings +user.name:greetings,
+                (user != null) ? greetings + user.name : greetings,
                 style: TextStyle(fontSize: 23, fontWeight: FontWeight.w400),
               ),
               subtitle: Text("Here's your news feed"),
