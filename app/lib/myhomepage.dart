@@ -108,7 +108,7 @@ class MyHomePageState extends State<MyHomePage>
   double sum = 0.00;
   Future<void> getAll() async {
     int t=newsList.length;
-    newsList.removeRange(0,t-1);
+    //newsList.removeRange(0,t-1);
     sum=0;
     String url = Config.url + "/mediamonitor/api/news/?format=json";
     try {
@@ -733,7 +733,7 @@ class MyHomePageState extends State<MyHomePage>
               ),
               subtitle: Text("Here's your news feed"),
               trailing: Text(
-                "${percent.toString()}% +ve",
+                "${percent.floor().toString()}% +ve",
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 30,
