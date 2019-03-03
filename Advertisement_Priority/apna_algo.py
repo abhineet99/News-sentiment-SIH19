@@ -154,6 +154,7 @@ def main():
 		each.print_it()	
 	with open('sorted_news.csv',"w+") as csv_file:
 
+		writer.writerow(['Name', 'State', 'Edition','Periodicity','Size', 'Language', 'Circulation' , 'CirculationScore', 'Rate', 'Mobile', 'Readers' ])
 		for each in object_list:
 			writer=csv.writer(csv_file)
 			writer.writerow([each.name,each.location,each.edition,each.frequency,each.reach_scale,each.language,each.ca,each.ca_num,each.rate,each.mobile,each.readers])

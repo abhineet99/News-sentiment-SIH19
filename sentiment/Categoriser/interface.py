@@ -5,7 +5,7 @@ DESTINATION = "../Output.csv"
 
 inputMatrix = pd.read_csv(SOURCE)
 # print(inputMatrix)
-exit(0)
+# exit(0)
 # sent = "Accident "
 # print(cat.)
 
@@ -31,7 +31,7 @@ for i in range(clen):
 		else:
 			cat_.append('O')
 	
-raw_data = {'Source': inputMatrix['Source'] , 'Headline': inputMatrix['Headline'], 'SourceURL':inputMatrix['SourceURL'], 'Date' : inputMatrix['Date'], 'Description' : inputMatrix['Description'], 'ImageURL' : inputMatrix['ImageURL'] , 'Sentiment': inputMatrix['Sentiment'], 'SentimentScore':inputMatrix['SentimentScore'] , 'Uploaded' : inputMatrix['Uploaded'] , 'PredictedCat' : cat_  }
+raw_data = {'Source': inputMatrix['Source'] , 'Headline': inputMatrix['Headline'], 'SourceURL':inputMatrix['SourceURL'], 'Date' : inputMatrix['Date'], 'Details' : inputMatrix['Details'], 'ImageURL' : inputMatrix['ImageURL'] , 'Sentiment': inputMatrix['Sentiment'], 'SentimentScore':inputMatrix['SentimentScore'] , 'Uploaded' : inputMatrix['Uploaded'] , 'PredCat' : cat_  }
 df = pd.DataFrame(raw_data, columns = ['Source', 'Headline' , 'SourceURL', 'Date', 'Description', 'ImageURL', 'Sentiment', 'SentimentScore', 'Uploaded', 'PredictedCat'  ])
 df.to_csv(DESTINATION, sep = ',' , index= False)
 
