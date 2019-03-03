@@ -1,0 +1,152 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Media monitoring service for the ministry of Railways">
+        <meta name="keywords" content="Media, Sentiment, Monitor, Railways">
+        <meta name="author" content="ateamhasnoname">
+        <title>Advertising</title>
+
+        {% comment %} bootstrap linking {% endcomment %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        {% comment %} Google Fonts {% endcomment %}
+				 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet"> 
+  
+  
+      <link rel="stylesheet" href="{% static 'adpricing/table_style.css' %}">
+
+  
+</head>
+
+<body>
+
+
+<section>
+  <!--for demo wrap-->
+  <h1>Railways Advertising Portal</h1><br><br>
+  <br>
+  <div class="row">
+    <span color="white">Sort By:</span>
+    <span><button onclick="sortTableSource(11, true)">Readership</button></span>
+    <span><button onclick="sortTableSource(6, false)">Language</button></span>
+    <span><button onclick="sortTableSource(0, true)">Optimal</button></span>
+    <span><button onclick="sortTableSource(5, true)">Rate</button></span>
+    <br>
+  </div>
+  <br>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>State/Area</th>
+          <th>Edition </th>
+          <th>Name</th>
+          <th>Periodicity</th>
+          <th>Rate</th>
+          <th>Language</th>
+          <th>Phone</th>
+          <th>Size</th>
+          {% comment %} <th>Marks</th> {% endcomment %}
+          <th>Circulation Type</th>
+          <th>Circulation Score</th>
+          <th>Readers</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0" id="detail_data">
+      <tbody>
+        {% for item in ad_data %}
+        <tr >
+            <td> {{ forloop.counter }}</td>
+            <td>{{ item.state }} </td>
+            <td>{{ item.edition_area }} </td>
+            <td>{{ item.newspaper_name }} </td>
+            <td>{{ item.periodicity }} </td>
+            <td>{{ item.rate }} </td>
+            <td> {{ item.language }} </td>
+            <td> {{ item.phone }} </td>
+            <td> {{ item.size }} </td>
+            {% comment %} <td> {{ item.marks }} </td> {% endcomment %}
+            <td> {{ item.circulation_type }} </td>
+            <td> {{ item.circulation_score }} </td>
+            <td> {{item.readers}}</td>
+            
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- follow me template -->
+<script>
+  function sortTableSource(clmn, isInt) {
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("detail_data");
+    switching = true;
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 0; i < (rows.length - 1); i++) {
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        
+        
+        
+       
+          
+          x = rows[i].getElementsByTagName("TD")[clmn];
+          y = rows[i + 1].getElementsByTagName("TD")[clmn];
+          
+        
+          if(isInt){
+            console.log(x.innerHTML);
+            console.log(y.innerHTML);
+            if (parseInt(x.innerHTML) >= parseInt(y.innerHTML)) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+          else{
+            
+            if (x.innerHTML.toLowerCase() >y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        
+        
+        
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+      }
+    }
+  }
+  </script>
+
+</body>
+</html>

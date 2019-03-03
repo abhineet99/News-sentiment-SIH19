@@ -17,16 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 
-from adpricing.resources import AdDataResource
-
-
-
-ad_data_resource = AdDataResource()
+from adpricing import views
 
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('adpricing.urls')),
-    url(r'^api/', include(ad_data_resource.urls)),
+    path('', views.home),
+
 ]
