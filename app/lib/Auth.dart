@@ -28,11 +28,14 @@ class SignIn{
     String mobileNo=await user.phoneNumber;
     String name =await user.displayName;
     String emailId=await user.email;
-    User _user=new User(id:id,name: name,mobileNo: mobileNo,emailId: emailId );
+    String photoUrl=user.photoUrl;
+    User _user=new User(id:id,name: name,mobileNo: mobileNo,emailId: emailId,photoUrl: photoUrl );
+
+    
 
     return _user;
     }catch(e){
-    //  print(e);
+    print("\n exception\n");
       throw (e);
     }
   }
@@ -44,9 +47,12 @@ class SignIn{
       await prefs.setString('mobileNo', _user.mobileNo);
       await prefs.setString('name', _user.name);
       await prefs.setString("emailId", _user.emailId);
+      await prefs.setString("photoUrl", _user.photoUrl);
+    
     }catch(e){
-      print(e);
-      throw(e);
+      print("\n exception\n");
+            print(e);
+      //throw(e);
     }
     
   }
@@ -57,12 +63,25 @@ class SignIn{
       String name= await prefs.getString('name');
       String mobileNo=await prefs.getString('mobileNo');
       String emailId=await prefs.getString('emailId');
-      return User(id: idToken,name: name,mobileNo: mobileNo,emailId:emailId );
+      String photoUrl=await prefs.getString('photoUrl');
+      return User(id: idToken,name: name,mobileNo: mobileNo,emailId:emailId,photoUrl: photoUrl );
     }catch(e){
       print(e);
-      throw(e);
+      //throw(e);
     }
     
   }
+  static Future<void> logout() async{
+    FirebaseAuth.instance.signOut();
+    SharedPreferences prefs=await SharedPreferences.getInstance();
+     await prefs.setString('idToken', null);
+      await prefs.setString('mobileNo', null);
+      await prefs.setString('name', null);
+      await prefs.setString("emailId", null);
+      await prefs.setString("emailId", null);
+
+  }
+
+  
   
 }

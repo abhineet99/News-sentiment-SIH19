@@ -18,15 +18,17 @@ class SettingsPageState extends State<SettingsPage> {
   User user;
 
   @override
-    void initState() {
-      // TODO: implement initState
-      //how allowed multiple .then here
-      SignIn.getUser().then((User user1)=>setState(()=>user=user1)).catchError((e){
+  void initState() {
+    // TODO: implement initState
+    //how allowed multiple .then here
+    SignIn.getUser()
+        .then((User user1) => setState(() => user = user1))
+        .catchError((e) {
       print(e);
       Navigator.of(context).pushReplacementNamed(SplashScreen.tag);
     });
-      super.initState();
-    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +66,19 @@ class SettingsPageState extends State<SettingsPage> {
                               // color: Colors.white,
                               ),
                           child: Container(
+                            height: 100,
+                            width: 120,
                             decoration: BoxDecoration(
-                                shape: BoxShape.circle, color: Colors.white),
-                            //child: Text("IMG"),
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: NetworkImage(
+                                      (user!=null)?
+                                      (user.photoUrl != null)
+                                          ? user.photoUrl
+                                          : Config.testImg:Config.testImg,
+                                    ))),
                           )),
                     ),
                     Expanded(
@@ -75,8 +87,7 @@ class SettingsPageState extends State<SettingsPage> {
                     ),
                     Expanded(
                         flex: 5,
-                        child: Text(
-                          (user!=null)?user.name:"-",
+                        child: Text((user != null) ? user.name : "-",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 23,
@@ -117,7 +128,7 @@ class SettingsPageState extends State<SettingsPage> {
                                           borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(15),
                                               topLeft: Radius.circular(15))),
-                                      child: Center(child: Text("Hyegine")),
+                                      child: Center(child: Text("Hygine")),
                                     ),
                                   )),
                               Expanded(
@@ -198,52 +209,61 @@ class SettingsPageState extends State<SettingsPage> {
                         padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                         child: Column(
                           children: <Widget>[
-                            
                             Row(children: <Widget>[
                               Expanded(
                                 flex: 2,
                                 child: Text(
                                   "Email",
                                   style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: 18
-                                  ),
+                                      color: Colors.grey[600], fontSize: 18),
                                 ),
                               ),
                               Expanded(
                                 flex: 4,
                                 child: Text(
-                                  (user!=null)?user.emailId:"-",
+                                  (user != null) ? user.emailId : "-",
                                   style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: 15
-                                  ),
+                                      color: Colors.grey[600], fontSize: 15),
                                 ),
                               )
                             ]),
-                            Padding(padding: EdgeInsets.all(10),),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                            ),
                             Row(children: <Widget>[
                               Expanded(
                                 flex: 2,
                                 child: Text(
                                   "Mobile",
                                   style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: 18
-                                  ),
+                                      color: Colors.grey[600], fontSize: 18),
                                 ),
                               ),
                               Expanded(
                                 flex: 4,
                                 child: Text(
-                                  (user!=null)?((user.mobileNo!=null)?user.mobileNo:"None"):"-",
+                                  (user != null)
+                                      ? ((user.mobileNo != null)
+                                          ? user.mobileNo
+                                          : "None")
+                                      : "-",
                                   style: TextStyle(
-                                    color: Colors.grey[600],
-                                    fontSize: 15
-                                  ),
+                                      color: Colors.grey[600], fontSize: 15),
                                 ),
                               )
-                            ])
+                            ]),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                            ),
+                            FlatButton(
+                              child: Text("Logout"),
+                              onPressed: () {
+                                SignIn.logout();
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                                  builder: (context)=>SplashScreen(),
+                                ), (w)=>true);
+                              },
+                            )
                           ],
                         ),
                       ),

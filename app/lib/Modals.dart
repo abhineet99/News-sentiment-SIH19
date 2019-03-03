@@ -5,5 +5,6 @@ class User{
  String name;
  String mobileNo;
  String emailId;
- User({this.id,this.name,this.mobileNo,this.emailId});
+ String photoUrl;
+ User({this.id,this.photoUrl,this.name,this.mobileNo,this.emailId});
 }

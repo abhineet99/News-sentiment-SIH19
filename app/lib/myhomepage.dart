@@ -13,6 +13,8 @@ import 'loader.dart';
 import 'Modals.dart';
 import 'SplashScreen.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -27,33 +29,25 @@ class MyHomePageState extends State<MyHomePage>
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
   String greetings = "Morning ";
-  static var _tempNews = News(
-      title: "title",
-      score: 8,
-      sentiment: "sentiment",
-      url: "url",
-      dateTime: "dateTime",
-      source: "source",
-      imageUrl: "newsList");
-  var time;
-  static var newsList = <News>[
-    //  _tempNews, _tempNews, _tempNews, _tempNews,
-    //  _tempNews, _tempNews, //6 news
-  ];
-  bool processing = false;
-  static int pageNo = 0;
-
-  test() {
-    int i;
-    if (pageNo > 3) maxOut = true;
-    pageNo++;
-    for (i = 0; i < 10; i++) {
-      newsList.add(_tempNews);
+  static _launchUrl(String url) async {
+    try {
+      if (await canLaunch(url))
+        await launch(url);
+      else {
+        print("cannot open");
+      }
+    } catch (e) {
+      print("Exception");
+      print(e);
     }
   }
 
+  var time;
+  static var newsList = <News>[];
+  bool processing = false;
+  static int pageNo = 0;
+
   Future<int> getSize() async {
-    print("-----------inside getsize-----");
     String url = Config.url + "/mediamonitor/api/news/?format=json";
     try {
       print("----trying-----");
@@ -61,8 +55,7 @@ class MyHomePageState extends State<MyHomePage>
         url,
       );
       var responseJson = json.decode(response.body.toString());
-      print("response:::::::::::");
-      print(responseJson);
+
       // var mata=responseJson["meta"];
       return responseJson["meta"]["total_count"];
       //return 2;
@@ -76,7 +69,6 @@ class MyHomePageState extends State<MyHomePage>
     print("fetch Entry" + index.toString());
 
     if (index >= newsList.length) {
-      print("------------calling populating function");
       try {
         await populateNewsList(pageNo, index);
         if (index >= newsList.length) return {'success': false};
@@ -93,7 +85,7 @@ class MyHomePageState extends State<MyHomePage>
         };
       } catch (e) {
         print(e);
-        throw (e);
+        //throw (e);
       }
     } else {
       return {
@@ -112,7 +104,12 @@ class MyHomePageState extends State<MyHomePage>
     //  return Container();
   }
 
+  double percent = 0.00;
+  double sum = 0.00;
   Future<void> getAll() async {
+    int t=newsList.length;
+    newsList.removeRange(0,t-1);
+    sum=0;
     String url = Config.url + "/mediamonitor/api/news/?format=json";
     try {
       print("----trying-----");
@@ -132,6 +129,7 @@ class MyHomePageState extends State<MyHomePage>
           for (news in responseJson["objects"]) {
             temp++;
             newNews = News(
+                category: news["category"],
                 title: news["headline"],
                 score: news["sentiment_score"],
                 sentiment: news["sentiment"],
@@ -140,15 +138,32 @@ class MyHomePageState extends State<MyHomePage>
                 source: news["source"],
                 id: news["id"],
                 imageUrl: news["imageURL"]);
-
+            if (newNews.imageUrl == " ") {
+              newNews.imageUrl = Config.testImg;
+            } else if (newNews.imageUrl == "none") {
+              newNews.imageUrl = Config.testImg;
+            } else if (newNews.imageUrl == null) {
+              newNews.imageUrl = Config.testImg;
+            } else if (newNews.imageUrl == "None") {
+              newNews.imageUrl = Config.testImg;
+            } else if (newNews.imageUrl == "nan") {
+              newNews.imageUrl = Config.testImg;
+            }
+            if(newNews.category=="nan") newNews.category="None"; 
+            if (newNews.sentiment == "Positive") sum++;
             newsList.add(newNews);
+            
 
             //print(newsList[7]);
           }
+          percent = (sum * 100) / newsList.length;
+          print("\n\n\n$percent \n\n\n");
         }
       }
     } catch (e) {
-      throw (e);
+      print("\n exception\n");
+      print(e);
+      _showToast("Connection error");
     }
   }
 
@@ -257,7 +272,9 @@ class MyHomePageState extends State<MyHomePage>
                         color: Colors.white,
                         image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: NetworkImage(news.imageUrl)),
+                            image: NetworkImage(
+                              news.imageUrl,
+                            )),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -475,6 +492,15 @@ class MyHomePageState extends State<MyHomePage>
           Expanded(
               flex: 1,
               child: Container(
+                  padding: EdgeInsets.all(9),
+                  child: Center(
+                      child: Text(
+                    (news.category != null) ? news.category : "None",
+                    style: TextStyle(color: Colors.grey),
+                  )))),
+          Expanded(
+              flex: 1,
+              child: Container(
                   alignment: Alignment(0, 0),
                   child: IconButton(
                     iconSize: 18,
@@ -484,7 +510,7 @@ class MyHomePageState extends State<MyHomePage>
                     ),
                     onPressed: () {
                       //open url in browser
-                      //url
+                      _launchUrl(news.url);
                     },
                   )))
         ],
@@ -492,26 +518,42 @@ class MyHomePageState extends State<MyHomePage>
   TabController _controller;
   int _index;
 
+  bool newUser = false;
+  Future<void> getNewUser() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    bool l = await pref.getBool("newUser");
+    if (l != null)
+      newUser = true;
+    else {
+      pref.setBool("newUser", false);
+      newUser = false;
+    }
+  }
+
   void firebaseCloudMessaging_Listeners() {
     if (Platform.isIOS) iOS_Permission();
 
     _firebaseMessaging.getToken().then((token) {
-      print("---------token:" + token);
-      //print("--------idToken"+user.id);
-      Firestore.instance.runTransaction((Transaction transaction) async {
-        DocumentReference ref =
-            Firestore.instance.document("users/" + user.emailId);
-        Map<String, String> data1 = <String, String>{
-          "userName": user.name,
-          "tokenId": token,
-        };
-        DocumentSnapshot postSnapshot = await transaction.get(ref);
-        if (!postSnapshot.exists) {
-          transaction.set(ref, data1);
-        }
-      });
-    });
+      print("token" + token);
 
+      // if (newUser == true) {
+      // Firestore.instance.runTransaction((Transaction transaction) async {
+      //   DocumentReference ref =
+      //       Firestore.instance.document("users/" + user.emailId);
+      //   Map<String, String> data1 = <String, String>{
+      //     "userName": user.name,
+      //     "tokenId": token,
+      //   };
+      //   DocumentSnapshot postSnapshot = await transaction.get(ref);
+      //   if (!postSnapshot.exists) {
+      //     transaction.set(ref, data1);
+      //   }
+      //   });
+      //}
+    }).catchError((e) => print(e));
+    //print("--------idToken"+user.id);
+
+    print("\n\n\n configuring\n\n\n");
     _firebaseMessaging.configure(
       onMessage: (Map<String, dynamic> message) async {
         print('on message $message');
@@ -537,31 +579,31 @@ class MyHomePageState extends State<MyHomePage>
   @override
   initState() {
     SignIn.getUser()
-        .then((User user1) => setState(() {
-              user = user1;
-              firebaseCloudMessaging_Listeners();
-            }))
+        .then((User user1) => user = user1)
+        .then((_) => getNewUser())
+        .then((_) => setState(() {}))
         .catchError((e) {
       print(e);
       Navigator.of(context).pushReplacementNamed(SplashScreen.tag);
     });
+
     if (time.hour > 12) greetings = "Afternoon ";
     if (time.hour > 17) greetings = "Evening ";
 
     _controller.addListener(() {
       maxOut = false;
     });
-    getSize()
-    .then((int x) => getAll())
-    .then((_) {
-      _list = ListView.builder(itemBuilder: (context, index) {
-        if (index >= newsList.length) {
-          return null;
-        }
-        return newsTile2(newsList[index]);
-        });
-    })
-    .then((_) => setState(() {}));
+    getAll()
+        .then((_) {
+          _list = ListView.builder(itemBuilder: (context, index) {
+            if (index >= newsList.length) {
+              return null;
+            }
+            return newsTile2(newsList[index]);
+          });
+        })
+        .then((_) => setState(() {}))
+        .catchError((e) => print(e));
     /*   _list = ListView.builder(
           itemCount: x,
           itemBuilder: (context, index) {
@@ -606,6 +648,7 @@ class MyHomePageState extends State<MyHomePage>
 */
 
     super.initState();
+    firebaseCloudMessaging_Listeners();
   }
 
   //constructor
@@ -690,7 +733,7 @@ class MyHomePageState extends State<MyHomePage>
               ),
               subtitle: Text("Here's your news feed"),
               trailing: Text(
-                "45% +ve",
+                "${percent.toString()}% +ve",
                 style: TextStyle(
                     color: Colors.blue,
                     fontSize: 30,

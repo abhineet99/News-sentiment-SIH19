@@ -7,6 +7,7 @@ class News {
   String sentiment;
   int id;
   String imageUrl;
+  String category;
 
   News(
       {this.id,
@@ -15,7 +16,7 @@ class News {
       this.score,
       this.sentiment,
       this.source,
-      this.title,
+      this.title,this.category,
       this.imageUrl});
 
 }
