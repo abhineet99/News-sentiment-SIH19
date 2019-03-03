@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'myhomepage.dart';
 import 'config.dart';
 import 'newspage.dart';
+import 'settings.dart';
+import 'home.dart';
+import 'SplashScreen.dart';
 
 void main() => runApp(MyApp());
+
+final routes = <String, WidgetBuilder>{
+    Home.tag: (context) => Home(),
+    SplashScreen.tag: (context) => SplashScreen(),
+};
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,7 +22,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: /*NewsPage()*/MyHomePage(),
+      routes: routes,
+      home: SplashScreen(),
     );
   }
 }
