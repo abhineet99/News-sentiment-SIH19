@@ -7,9 +7,10 @@ from keras.preprocessing.text import Tokenizer
 from keras.models import model_from_json
 import pandas as pd
 import math
+import sys
 
 SOURCE =   "news_from_scrapper.csv"
-DESTINATION = "Output.csv"
+DESTINATION = "tempOutput.csv"
 
 def convert_text_to_index_array(text):
 	words = kpt.text_to_word_sequence(text)
@@ -63,5 +64,3 @@ print(len(y_pred_pos))
 raw_data = {'Source': inputMatrix['Source'] , 'Headline': inputMatrix['Headline'], 'SourceURL':inputMatrix['SourceURL'], 'Date' : inputMatrix['Date'], 'Description' : inputMatrix['Details'], 'ImageURL' : inputMatrix['ImageURL'] , 'Sentiment': sentiment_, 'SentimentScore':y_pred_pos , 'Uploaded' : inputMatrix['Uploaded']  }
 df = pd.DataFrame(raw_data, columns = ['Source', 'Headline' , 'SourceURL', 'Date', 'Details', 'ImageURL', 'Sentiment', 'SentimentScore', 'Uploaded'  ])
 df.to_csv(DESTINATION, sep = ',' , index= False)
-
-	
