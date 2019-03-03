@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Media monitoring service for the ministry of Railways">
+        <meta name="keywords" content="Media, Sentiment, Monitor, Railways">
+        <meta name="author" content="ateamhasnoname">
+        <title>Media Monitor</title>
+
+        {% comment %} bootstrap linking {% endcomment %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        {% comment %} Google Fonts {% endcomment %}
+				 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Poppins:500" rel="stylesheet"> 
+  
+  
+      <link rel="stylesheet" href="{% static 'mediamonitor/table_style.css' %}">
+
+  
+</head>
+
+<body>
+
+
+<section>
+  <!--for demo wrap-->
+  <h1>Newspaper Advertisment</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Date</th>
+          <th>Headline</th>
+          <th>Sentiment Score</th>
+          <th>Sentiment</th>
+          <th>Source</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for item in news_data %}
+        <tr >
+        <td> {{ item.id }}</td>
+        <td>{{ item.date }} </td>
+        <td>{{ item.headline }} </td>
+        <td>{{ item.sentiment_score }} </td>
+        <td>{{ item.sentiment }} </td>
+        <td> {{item.source}} </td>
+        <td> <a href="{{ item.sourceURL }}" > Follow Link </a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> by
+  <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+</div>
+</body>
+</html>
