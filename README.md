@@ -10,4 +10,4 @@ b) creating a media monitoring system, to let them know what is being circulated
 
 
 #Credits
-Pablo García Fernández for the template of the media monitoring panel from codepne.io
+Pablo García Fernández for the template of the media monitoring panel from codepen.io
